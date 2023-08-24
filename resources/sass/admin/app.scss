@@ -1,0 +1,16 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '@fortawesome/fontawesome-free';
+@import '../../assets/templates/admin/dashForge/lib/ionicons/css/ionicons.min.css';
+@import '../../assets/templates/admin/dashForge/scss/dashforge.scss';
+//@import '../../assets/templates/admin/dashForge/assets/css/dashforge.mail.css';
+@import '../../assets/templates/admin/dashForge/lib/select2/css/select2.min.css';
+@import '../../assets/datetimepicker/build/css/bootstrap-datetimepicker.min.css';
+@import "~datatables.net-dt/css/jquery.dataTables.min.css";
+@import "../admin/custom.scss";

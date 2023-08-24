@@ -1,0 +1,301 @@
+html,
+body {
+    height: 100%;
+}
+
+#app {
+    height: 100%;
+}
+
+.btn-primary {
+    color: #ffffff;
+}
+
+.ui-datepicker {
+    z-index: 999999 !important;
+}
+
+div.change-owner .select2-container--default .select2-selection--single {
+    height: 71px !important;
+}
+
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+    background-image: none;
+    background-color: transparent;
+    position: relative;
+}
+
+table.dataTable tbody td.sorting_1 {
+    background-color: transparent;
+}
+
+.btn-sm {
+    padding: 2px 15px;
+}
+
+table.dataTable th,
+table.dataTable td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.dataTable thead th:last-child {
+    border-right: 0;
+    padding: 2px 10px;
+}
+
+table.dataTable tbody th,
+table.dataTable tbody td {
+    padding: 2px 10px;
+}
+
+table.dataTable tfoot td {
+    border-top: 1px solid rgba(72, 94, 144, 0.16);
+    border-right: 1px solid rgba(72, 94, 144, 0.16);
+    padding: 0;
+}
+
+table.dataTable tfoot td:last-child {
+    border-right: 0;
+}
+
+table.dataTable tfoot input {
+    border: 0;
+    text-align: center;
+    padding: 8px 10px;
+}
+
+table.dataTable tfoot input:focus {
+    box-shadow: none;
+}
+
+table.dataTable thead th,
+.dataTables_wrapper span.dt-style,
+.dataTables_wrapper .filter-label,
+.dataTables_wrapper input::placeholder {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(72, 94, 144, 0.64);
+    font-weight: 700;
+}
+
+.text-left::placeholder {
+  text-align: left !important;
+}
+
+.text-right::placeholder {
+  text-align: right !important;
+}
+
+.dataTables_wrapper input::placeholder {
+    color: rgba(72, 94, 144, 0.16);
+}
+
+.dataTables_wrapper .filter-label {
+    padding: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dataTables_wrapper .filter-label.filter-label-up::after {
+    content: "\F3D8";
+}
+
+.dataTables_wrapper .filter-label.filter-label-down::after {
+    content: "\F3D0";
+}
+
+.dataTables_wrapper .filter-label.filter-label-up::after,
+.dataTables_wrapper .filter-label.filter-label-down::after {
+    font-family: "Ionicons";
+    font-size: 11px;
+    padding-left: 10px;
+}
+
+.dataTables_wrapper span.dt-style b {
+    font-size: 12px;
+    letter-spacing: 0;
+}
+
+@media screen and (max-width: 768px) {
+    table.dataTable thead th {
+        white-space: nowrap;
+        padding-right: 25px;
+    }
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background: #fff;
+}
+
+.daterangepicker .ranges li.active,
+.daterangepicker td.active {
+    background-color: #ff7200 !important;
+}
+
+
+.display-none {
+    display: none;
+}
+
+// Custom Date
+.theme-orange .vdatetime-popup__header,
+.theme-orange .vdatetime-calendar__month__day--selected>span>span,
+.theme-orange .vdatetime-calendar__month__day--selected:hover>span>span {
+    background: #FF9800;
+}
+
+.theme-orange .vdatetime-year-picker__item--selected,
+.theme-orange .vdatetime-time-picker__item--selected,
+.theme-orange .vdatetime-popup__actions__button {
+    color: #ff9800;
+}
+
+.job .dropdown-job {
+    li {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.job {
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: auto;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            width: 250px;
+        }
+    }
+}
+
+.dragpad {
+    margin-top: 30px;
+    border: dashed 2px #333;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 10px #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.aside-alert-link a+a {
+    margin-left: 0;
+}
+
+.dropdown-link .fa-cog {
+    width: 2rem;
+}
+
+.detail-inv {
+    padding: 0px !important;
+    width: 2px !important;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #print_media * {
+        visibility: visible;
+    }
+
+    .btn * {
+        visibility: hidden !important;
+    }
+}
+
+.form-upload-excel {
+    width: 100%;
+    cursor: pointer;
+    min-height: 300px;
+    padding-top: 25% !important;
+}
+
+.nav-link {
+    display: block !important;
+}
+
+.nav-aside .with-sub .nav-link::after {
+    float: right !important;
+}
+
+.border-top-custom {
+    border-top: 2px solid #000;
+}
+
+.border-bottom-custom {
+    border-bottom: 2px solid #000;
+}
+
+.progress.custom {
+    height: 100%;
+    position: relative;
+    padding-right: 50px;
+    color: #000;
+}
+
+.progress-bar {
+    padding: 10px 0px;
+}
+
+.btn-here {
+    position: absolute;
+    right: 10px;
+}
+
+.is-danger .multiselect__tags {
+    border-color: red;
+}
+
+@media screen and (max-width: 600px) {
+    .progress.custom {
+        padding-right: 30px;
+    }
+}
+
+.progress {
+    height: 20px;
+}
+
+.nav-tabs .nav-link {
+    padding-top: 7px;
+}
+
+.nav-tabs {
+    border-bottom: 0;
+}
+table.dataTable thead th, .dataTables_wrapper span.dt-style, .dataTables_wrapper .filter-label, .dataTables_wrapper{
+//   text-transform: lowercase;
+  font-size: 12px;
+  letter-spacing: 0;
+  color: rgb(18, 18, 19);
+  font-weight: normal;
+}
+
+table.dataTable thead th{
+    font-weight: bold;
+}
+.svg-inline--fa.fa-w-18 {
+    width: 1.25em;
+}

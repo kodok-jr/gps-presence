@@ -1,0 +1,59 @@
+.bg-lightgrey{
+    background-color: #f3f3f3;
+}
+
+.btn-outline-custom{
+    border: 3px solid #ff7d00;
+    color: #ff7d00;
+}
+
+.btn-outline-custom:hover{
+    border: 3px solid #ff7d00;
+    color: #fff;
+    background-color: #ff7d00;
+}
+.z-index10{
+    z-index: 10;
+}
+
+.navbar-custom.nav-sticky li a{
+color: white!important;
+}
+.bg-darkgrey{
+    background-color: #252525;
+}
+@media screen and (min-width: 1200px) {
+
+    .hassle{
+        margin-top: 5rem;
+    }
+
+.whysepana{
+    margin-top: -10rem;
+    padding-top: 12rem;
+}
+}
+@media (min-width:992px) and (max-width: 1200px) {
+
+    .hassle{
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width: 576px) { 
+    .text-center-mobile{
+        text-align: center!important;
+    }
+    .footer-title:after {
+        content: '';
+        width: 25px;
+        border-bottom: 1px solid #FFF;
+        position: absolute;
+        left: 46%;
+        bottom: 0;
+        display: block;
+        border-bottom: 1px solid;
+        opacity: 0.2;
+    }
+
+}
