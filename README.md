@@ -24,6 +24,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Third Party
 - [Avatar Laravolt](https://github.com/laravolt/avatar).
+- [laravelCollective](https://laravelcollective.com/docs/6.x/html).
 
 ## Learning Laravel
 

@@ -24,7 +24,7 @@
             <div class="h-100 bg-plum-plate bg-animation">
                 <div class="d-flex h-100 justify-content-center align-items-center">
                     <div class="mx-auto app-login-box col-md-8">
-                        <div class="app-logo-inverse mx-auto mb-3"></div>
+                        {{-- <div class="app-logo-inverse mx-auto mb-3"></div> --}}
                         <div class="modal-dialog w-100 mx-auto">
                             <div class="modal-content">
 
@@ -33,7 +33,7 @@
 
                             </div>
                         </div>
-                        <div class="text-center text-white opacity-8 mt-3">Copyright © ArchitectUI 2019</div>
+                        <div class="text-center text-white opacity-8 mt-3">Copyright © kodokjr {{ Illuminate\Support\Carbon::now()->format('Y') }}</div>
                     </div>
                 </div>
             </div>
