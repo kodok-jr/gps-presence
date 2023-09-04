@@ -7,8 +7,8 @@ use App\Helpers\Larapattern;
  *
  */
 
-if (!function_exists('Larapattern')) {
-    function Larapattern() {
+if (!function_exists('larapattern')) {
+    function larapattern() {
         return new Larapattern;
     }
 }
