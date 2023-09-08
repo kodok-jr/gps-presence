@@ -24,7 +24,10 @@
                 </div>
                 <div class="col-md-12">
                     <div class="position-relative form-group">
-                        {!! Form::password('password', ['class' => 'form-control-sm form-control', 'id' => 'password', 'placeholder' => 'Password here...']) !!}
+                        {!! Form::password('password', ['class' => 'form-control-sm form-control '.($errors->has('password') ? 'is-invalid' : null), 'id' => 'password', 'placeholder' => 'Password here...']) !!}
+                        @error('password')
+                            <small id="firstname-error" class="error invalid-feedback">{{ $message }}</small>
+                        @enderror
                         {{-- <input name="password" id="examplePassword" placeholder="Password here..." type="password" class="form-control"> --}}
                     </div>
                 </div>

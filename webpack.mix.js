@@ -20,3 +20,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/web/app.js', 'public/js/web')
     .sass('resources/sass/web/app.scss', 'public/css/web')
     .sourceMaps();
+
+
+/** Images Assets */
+mix.copyDirectory('resources/assets/images', 'public/images')

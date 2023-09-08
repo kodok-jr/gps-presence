@@ -1,3 +1,90 @@
+
+
+
+// ----------------------------------------- START ----------------------------------------- //
+
+.app-header .app-header__content {
+    padding: 0 20px !important;
+}
+// .app-header .app-header__content {
+//     padding: 0 0 0 0 !important;
+// }
+.header-btn-lg::before{
+    background: none !important;
+}
+.header-btn-lg {
+    padding: 0 !important;
+    margin-left: 0 !important;
+}
+.btn-group::before{
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    background: #dee2e6;
+    width: 1px;
+    height: 30px;
+    margin-top: -15px;
+    content: '';
+}
+.widget-content-left.ml-3.header-user-info {
+    padding-right: 29px;
+}
+.bg-heavy-rain{
+    background-image: linear-gradient(to top,#3d4041 0%,#84898b 100%)!important;
+}
+.fixed-sidebar .app-main .app-main__outer {
+    padding-left: 0 !important;
+}
+.main-card.mb-3.card.custom {
+    border-radius: 9% !important;
+}
+.app-footer .app-footer__inner{
+    padding: 0.2rem !important;
+    display: block !important;
+}
+.dot-btn-wrapper{
+    display: block !important;
+    padding: 0.5rem !important;
+}
+.footer-dots{
+    justify-content: center !important;
+}
+.fixed-footer .app-footer .app-footer__inner {
+    margin-left: 0 !important;
+}
+.alert-success-custom {
+    color: #1b8477 !important;
+    background-color: white !important;
+    border: 1.5px solid !important;
+    border-color: #1f9c5b !important;
+    border-radius: 0.5rem !important;
+}
+@media (max-width: 767.98px) {
+    .col-md-2 {
+        max-width: 112px !important;
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+    }
+    .font-icon-wrapper {
+        min-height: 100px !important;
+        padding-top: 23px;
+    }
+    .popover, .dropdown-menu {
+        position: fixed !important;
+        z-index: 50;
+        left: 31% !important;
+        top: 20% !important;
+        width: 67% !important;
+        transform: translateY(-50%) !important;
+        min-width: 10px !important;
+        max-height: 30% !important;;
+    }
+}
+
+// ----------------------------------------- END ----------------------------------------- //
+
+
+
 .bg-lightgrey{
     background-color: #f3f3f3;
 }
@@ -40,7 +127,7 @@ color: white!important;
     }
 }
 
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
     .text-center-mobile{
         text-align: center!important;
     }

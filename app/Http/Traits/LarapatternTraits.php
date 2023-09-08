@@ -3,6 +3,7 @@
 namespace App\Http\Traits;
 
 use App\Models\Role;
+use Illuminate\Support\Facades\Storage;
 
 trait LarapatternTraits
 {
@@ -43,5 +44,14 @@ trait LarapatternTraits
         }
 
         return $permissions;
+    }
+
+    /** Laravatar */
+    public function getLaravatarUrlAttribute () {
+        $laravolt = asset('storage/avatars/'.$this->name.'.png');
+
+        $avatar_url = asset('storage/'.$this->avatar);
+
+        return (Storage::disk('public')->exists($this->avatar)) ? $avatar_url : $laravolt;
     }
 }
