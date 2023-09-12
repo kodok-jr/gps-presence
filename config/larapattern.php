@@ -6,7 +6,8 @@ return [
     /** Prefix Page */
     'prefix' => env('LAPATTERN_PREFIX_PAGE', 'administrator'),
     'auth' => [
-        'guard' => 'web',
+        // 'guard' => 'web',
+        'guard' => 'admin',
     ],
 
     /** Templates */

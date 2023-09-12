@@ -4,16 +4,28 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use App\Http\Traits\LarapatternTraits;
 use App\Observers\UserObserver;
+use Laravel\Sanctum\HasApiTokens;
+use App\Http\Traits\LarapatternTraits;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Nanigans\SingleTableInheritance\SingleTableInheritanceTrait;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, LarapatternTraits;
+    use HasApiTokens, HasFactory, Notifiable, LarapatternTraits, SingleTableInheritanceTrait;
+
+    /**
+     * User table inheritance "ADMIN" and "MEMBER"
+     *
+     */
+    protected $table = 'users';
+    protected static $singleTableTypeField = 'type';
+    protected static $singleTableSubclasses = [
+        Admin::class,
+        Member::class
+    ];
 
     /**
      * The attributes that are mass assignable.

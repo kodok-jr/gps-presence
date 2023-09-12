@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
+use App\Models\Member;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -16,20 +18,33 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        if (!User::count()) {
+        if (!Admin::count()) {
             $role = Role::first();
 
-            $user = User::create([
-                'name' => 'John Doe',
+            $admin = Admin::create([
+                'name' => 'Super Admin',
                 'email' => 'admin@mail.com',
                 'password' => bcrypt('password')
             ]);
 
-            $user->roles()->sync([$role->id]);
+            $admin->roles()->sync([$role->id]);
+        }
+
+        if (!Member::count()) {
+            $member = Member::create([
+                'name' => 'John Doe',
+                'email' => 'member@mail.com',
+                'password' => bcrypt('password')
+            ]);
         }
 
         $this->command->info('================ SUPERADMIN ======================');
         $this->command->info('email     : admin@mail.com');
+        $this->command->info('password  : password');
+        $this->command->info('==================================================');
+        $this->command->info('==================================================');
+        $this->command->info('===================== MEMBER =====================');
+        $this->command->info('email     : member@mail.com');
         $this->command->info('password  : password');
         $this->command->info('==================================================');
     }

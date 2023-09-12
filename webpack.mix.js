@@ -17,10 +17,31 @@ const mix = require('laravel-mix');
 //     ]);
 
 
+/*
+ |-------------------------------------------------------------------------------------------
+ | /** ArchitectUi
+ |-------------------------------------------------------------------------------------------
+ */
 mix.js('resources/js/web/app.js', 'public/js/web')
     .sass('resources/sass/web/app.scss', 'public/css/web')
     .sourceMaps();
 
+/** Assets */
+mix.copyDirectory('resources/assets/images', 'public/images/architectui')
 
-/** Images Assets */
-mix.copyDirectory('resources/assets/images', 'public/images')
+/*|------------------------------------------ END's ------------------------------------------ */
+
+
+
+/*
+ |-------------------------------------------------------------------------------------------
+ | /** Sleek Dashboard
+ |-------------------------------------------------------------------------------------------
+ */
+mix.js('resources/js/admin/app.js', 'public/js/admin')
+    .sass('resources/sass/admin/app.scss', 'public/css/admin')
+    .sourceMaps();
+
+/** Assets */
+
+/*|------------------------------------------ END's ------------------------------------------ */

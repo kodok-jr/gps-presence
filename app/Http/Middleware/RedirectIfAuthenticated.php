@@ -23,6 +23,12 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                /**
+                 * // custom multiple middleware --| admins |--
+                 */
+                if ($request->route()->named('administrator.login')) {
+                    return redirect(RouteServiceProvider::ADMINISTRATOR);
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

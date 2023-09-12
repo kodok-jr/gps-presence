@@ -22,6 +22,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Administrator'], function () 
     Auth::routes(['register' => false]);
 
     Route::group(['middleware' => 'larapatternauth'], function () {
+    // Route::group(['middleware' => ['auth:admin']], function () {
 
         Route::resource('/', DashboardController::class)->only(['index']);
 
