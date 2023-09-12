@@ -2,10 +2,19 @@
     "/js/web/app.js": "/js/web/app.js",
     "/js/admin/app.js": "/js/admin/app.js",
     "/css/web/app.css": "/css/web/app.css",
+    "/css/admin/app.css": "/css/admin/app.css",
     "/images/architectui/favicon-laravel.ico": "/images/architectui/favicon-laravel.ico",
     "/images/architectui/favicon-underconstruction.ico": "/images/architectui/favicon-underconstruction.ico",
     "/images/architectui/favicon.png": "/images/architectui/favicon.png",
     "/images/architectui/logo/icon-under-construction.png": "/images/architectui/logo/icon-under-construction.png",
     "/images/architectui/logo/laravel-logo.png": "/images/architectui/logo/laravel-logo.png",
-    "/css/admin/app.css": "/css/admin/app.css"
+    "/data/search.json": "/data/search.json",
+    "/resources/views/vendor/jsvalidation/bootstrap.php": "/resources/views/vendor/jsvalidation/bootstrap.php",
+    "/resources/views/vendor/jsvalidation/bootstrap4.php": "/resources/views/vendor/jsvalidation/bootstrap4.php",
+    "/resources/views/vendor/jsvalidation/bootstrap5.php": "/resources/views/vendor/jsvalidation/bootstrap5.php",
+    "/resources/views/vendor/jsvalidation/uikit.php": "/resources/views/vendor/jsvalidation/uikit.php",
+    "/vendor/jsvalidation/js/jsvalidation.js": "/vendor/jsvalidation/js/jsvalidation.js",
+    "/vendor/jsvalidation/js/jsvalidation.js.map": "/vendor/jsvalidation/js/jsvalidation.js.map",
+    "/vendor/jsvalidation/js/jsvalidation.min.js": "/vendor/jsvalidation/js/jsvalidation.min.js",
+    "/vendor/jsvalidation/js/jsvalidation.min.js.map": "/vendor/jsvalidation/js/jsvalidation.min.js.map"
 }

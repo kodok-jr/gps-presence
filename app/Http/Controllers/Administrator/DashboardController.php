@@ -14,8 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        // return view('auth.login');
-        dd('test');
+        return view('admin.home');
     }
 
     /**

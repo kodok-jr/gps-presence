@@ -43,5 +43,7 @@ mix.js('resources/js/admin/app.js', 'public/js/admin')
     .sourceMaps();
 
 /** Assets */
-
+mix.copyDirectory('resources/assets/templates/sleek/dist/assets/data', 'public/data');
+mix.copy('vendor/proengsoft/laravel-jsvalidation/resources/views', 'resources/views/vendor/jsvalidation')
+    .copy('vendor/proengsoft/laravel-jsvalidation/public', 'public/vendor/jsvalidation');
 /*|------------------------------------------ END's ------------------------------------------ */
