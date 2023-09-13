@@ -12,10 +12,11 @@ class Menu {
      */
     public function __construct()
     {
+        // dd(file_exists(app_path('/Menus/MenuSidebar.php')));
         if (larapattern()->getOption('menu-sidebar')) {
-            $this->sidebar = json_decode(json_encode(larapattern()->getOption('nemu-sidebar')), true);
+            $this->sidebar = json_decode(json_encode(larapattern()->getOption('menu-sidebar')), true);
         } else {
-            $this->sidebar = file_exists(app_path('/Menus/MenusSidebar.php')) ? require(app_path('/Menus/MenuSidebar.php')) : [];
+            $this->sidebar = file_exists(app_path('/Menus/MenuSidebar.php')) ? require(app_path('/Menus/MenuSidebar.php')) : [];
         }
 
         if (larapattern()->getOption('menu-top')) {

@@ -22,10 +22,10 @@
                 |--------------------------------------------------------------------------
                 */
                 [
-                    'gate' => 'administrator.management.accounts.admin.index',
+                    'gate' => '',
                     'name' => __('dashboard.sidebar.submenus.name.user'),
                     'description' => __('dashboard.sidebar.submenus.description.user'),
-                    'route' => ['administrator.management.accounts.admin.index', []],
+                    'route' => ['', []],
                     'active_url' => 'administrator/management/accounts/admin*',
                     'is_active' => 'management/accounts/admin*',
                     'id' => '',
@@ -58,10 +58,10 @@
                 |--------------------------------------------------------------------------
                 */
                [
-                    'gate' => 'administrator.management.access.roles.index',
+                    'gate' => '',
                     'name' => __('dashboard.sidebar.submenus.name.role-permissions'),
                     'description' => __('dashboard.sidebar.submenus.description.role-permissions'),
-                    'route' => ['administrator.management.access.roles.index', []],
+                    'route' => ['', []],
                     'active_url' => 'administrator/management/access/roles*',
                     'is_active' => 'management/access/roles*',
                     'id' => '',

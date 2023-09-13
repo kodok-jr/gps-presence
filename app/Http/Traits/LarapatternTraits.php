@@ -33,7 +33,7 @@ trait LarapatternTraits
     public function getPermissionAttribute () {
         $permissions = [];
 
-        foreach ($this->roles() as $key => $role) {
+        foreach ($this->roles as $key => $role) {
             $gates = $role->gates ?? [];
 
             foreach ($gates as $key => $gate) {

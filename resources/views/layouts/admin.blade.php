@@ -44,6 +44,62 @@
                 </svg>
                 <i class="mdi mdi-github-circle"></i>
             </a><!-- ENd Github link -->
+
+            <!-- Left sidebar with footer
+                /=====================================/-->
+            <aside class="left-sidebar bg-sidebar">
+                <div id="sidebar" class="sidebar sidebar-with-footer">
+
+                    <!-- Aplication Brand -->
+                    <div class="app-brand">
+                        <a href="{{ route('administrator.index') }}" title="Sleek Dashboard" style="padding-left: 0.56rem !important;">
+                            {{-- <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"
+                                width="30" height="33" viewBox="0 0 30 33">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path class="logo-fill-blue" fill="#7DBCFF" d="M0 4v25l8 4V0zM22 4v25l8 4V0z" />
+                                    <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
+                                </g>
+                            </svg> --}}
+                            <img src="{{ asset('images/logo/icon-under-construction.png') }}" width="55" alt="{{ config('app.name', 'Sleek Dashboard') }}">
+                            <span class="brand-name text-truncate ml-1" style="font-size: 1.32rem !important;">{{ config('app.name', 'Sleek Dashboard') }}</span>
+                        </a>
+                    </div>
+
+                    <div class="sidebar-scrollbar">
+
+                        <x-larapattern-sidebar />
+
+                    </div>
+
+                    <div class="sidebar-footer">
+                        <hr class="separator mb-0" />
+                        <div class="sidebar-footer-content">
+                            <h6 class="text-uppercase">
+                                Cpu Uses <span class="float-right">40%</span>
+                            </h6>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar active" style="width: 40%;" role="progressbar"></div>
+                            </div>
+                            <h6 class="text-uppercase">
+                                Memory Uses <span class="float-right">65%</span>
+                            </h6>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-warning" style="width: 65%;" role="progressbar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- End Left sidebar with footer /=====================================/-->
+
+            <div class="page-wrapper">
+
+                <!-- Header
+                    /=====================================/-->
+                <x-larapattern-header></x-larapattern-header>
+                <!-- End Header /=====================================/-->
+            </div>
         </div>
 
     </div>

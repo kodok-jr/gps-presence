@@ -8,6 +8,27 @@ use Illuminate\Support\Facades\Cache;
 class Larapattern
 {
     protected $cache_alias = 'larapattern-cache-';
+
+    /**
+     * This method for protect teh controller
+     *
+     * @param [type] $gates
+     * @return boolean
+     */
+    public function allow($gates)
+    {
+        if (Gate::denies($gates)) {
+            return abort(403);
+        }
+    }
+
+    /**
+     * Load component form
+     */
+    function component_path($blade) {
+        return config('template.component.form') . "." . $blade;
+    }
+
     /**
      * Get larapattern option
      */

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Admin;
 use App\Models\User;
 
 return [
@@ -16,7 +17,7 @@ return [
     ],
 
     /** User Model */
-    'user' => User::class,
+    'user' => Admin::class,
 
     /** Option Cached */
     'cache_option' => true
