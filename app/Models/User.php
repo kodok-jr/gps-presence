@@ -60,6 +60,15 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get all of the comments for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function presences () {
+        return $this->hasMany(Presence::class, 'user_id', 'id');
+    }
+
+    /**
      * User Observer
      */
     protected static function boot () {
