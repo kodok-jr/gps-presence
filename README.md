@@ -31,6 +31,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - [webcam.min.js](https://www.cdnpkg.com/webcamjs/file/webcam.min.js/).
 - [LeafLet](https://leafletjs.com).
 - [Sweetalert2.github.io](https://sweetalert2.github.io).
+- [Botika.Online](https://botika.online/TextToSpeech/index.php).
 
 ## Learning Laravel
 

@@ -61,10 +61,30 @@
                     </div>
                 </div>
                 <div class="pt-3 card-body pl-2 pr-2 pb-0">
+
+                <!-- WebCam n Maps
+                    /=====================================/-->
                     <input type="hidden" id="current_location">
                     <div class="webcam-capture"></div>
                     <hr>
                     <div id="map"></div>
+                <!-- End WebCam n Maps
+                    /=====================================/-->
+
+                <!-- Sounds
+                    /=====================================/-->
+                    <audio id="notification_in">
+                        <source src="{{ asset('sounds/notification-in.mp3') }}" type="audio/mpeg">
+                    </audio>
+                    <audio id="notification_out">
+                        <source src="{{ asset('sounds/notification-out.mp3') }}" type="audio/mpeg">
+                    </audio>
+                    <audio id="notification_error">
+                        <source src="{{ asset('sounds/BotikaTTS-error.mp3') }}" type="audio/mpeg">
+                    </audio>
+                <!-- End Sounds
+                    /=====================================/-->
+
                 </div>
                 <div class="pl-1 pr-1 d-block text-center rm-border card-footer">
                     @if ($check > 0)
@@ -98,6 +118,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script>
+        /**
+         * Configuration sounds notification
+         * ==================================================================== */
+        var notification_in = document.getElementById('notification_in')
+        var notification_out = document.getElementById('notification_out')
+        var notification_error = document.getElementById('notification_error')
 
         /**
          * Configuration layout webcam
@@ -145,7 +171,6 @@
 
         function errorCallback(params) {}
 
-
         /**
          * Saving data
          * ==================================================================== */
@@ -171,16 +196,23 @@
                     var status = response.split("|");
 
                     if (status[0] == 'success') {
+                        /** Sound Notifications */
+                        if (status[2] == 'in') {
+                            notification_in.play();
+                        } else {
+                            notification_out.play();
+                        }
+
                         Swal.fire({
                             icon: 'success',
-                            title: 'Berhasil',
-                            text: status[1],
+                            text: 'Selamat, Anda berhasil absen..!',
                             confirmButtonText: 'Ok'
-                        });
-                        setTimeout(() => {
+                        }).then((result) => {
+                            /* return redirect back to home page */
                             location.href = '/home'
-                        }, 5000);
+                        });
                     } else {
+                        notification_error.play();
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...!',

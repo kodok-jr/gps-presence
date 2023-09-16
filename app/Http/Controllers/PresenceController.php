@@ -75,7 +75,7 @@ class PresenceController extends Controller
             Storage::put($file, $file_image);
             echo "success|Terimakasih, Sudah melakukan absen masuk|in";
         } else {
-            echo "error|Maaf Gagal Absen, Hubungi Tim IT|in";
+            echo "error|Maaf Gagal Absen, Silahkan Hubungi Tim IT|in";
         }
 
     }
@@ -134,7 +134,7 @@ class PresenceController extends Controller
             Storage::put($file, $file_image);
             echo "success|Terimakasih, Sudah melakukan absen pulang, Hati-hati dijalan..!|out";
         } else {
-            echo "error|Maaf Gagal Absen, Hubungi Tim IT|out";
+            echo "error|Maaf Gagal Absen, Silahkan Hubungi Tim IT|out";
         }
     }
 
