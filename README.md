@@ -28,6 +28,8 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - [SingleTable Inheritance](https://github.com/jonspalmer/single-table-inheritance).
 - [Proengsoft::JsValidation](https://github.com/proengsoft/laravel-jsvalidation).
 - [Lipis::Flag-Icons](https://github.com/lipis/flag-icons).
+- [webcam.min.js](https://www.cdnpkg.com/webcamjs/file/webcam.min.js/).
+- [LeafLet](https://leafletjs.com).
 
 ## Learning Laravel
 

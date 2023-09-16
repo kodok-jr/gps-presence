@@ -4,8 +4,8 @@
         <div class="text-center">
             <div class="footer-dots">
                 <div class="dropdown">
-                    <a aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="dot-btn-wrapper">
-                        <i class="dot-btn-icon lnr-store icon-gradient bg-heavy-rain"></i>
+                    <a href="{{ route('home') }}" class="dot-btn-wrapper">
+                        <i class="dot-btn-icon fa fa-home icon-gradient {{ request()->is('home') ? 'bg-heavy-rain-custom' : 'bg-heavy-rain' }}"></i>
                     </a>
                     <div tabindex="-1" role="menu" aria-hidden="true"
                         class="dropdown-menu-xl rm-pointers dropdown-menu">
@@ -16,8 +16,7 @@
                                 </div>
                                 <div class="menu-header-content text-dark">
                                     <h5 class="menu-header-title">Notifications</h5>
-                                    <h6 class="menu-header-subtitle">You have <b>21</b> unread
-                                        messages</h6>
+                                    <h6 class="menu-header-subtitle">You have <b>21</b> unread messages</h6>
                                 </div>
                             </div>
                         </div>
@@ -478,6 +477,7 @@
                     </div>
                 </div>
                 <div class="dots-separator"></div>
+
                 <div class="dropdown">
                     <a class="dot-btn-wrapper" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false">
                         <i class="dot-btn-icon lnr-clock icon-gradient bg-heavy-rain"></i>
@@ -518,15 +518,17 @@
                     </div>
                 </div>
                 <div class="dots-separator"></div>
+
                 <div class="dropdown">
-                    <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="p-0 btn btn-link">
+                    <a href="{{ route('presences.create') }}" class="p-0 btn btn-link">
                         <span class="icon-wrapper icon-wrapper-alt rounded-circle">
                             <span class="icon-wrapper-bg bg-primary"></span>
                             <i class="icon text-primary fa fa-camera-retro"></i>
                         </span>
-                    </button>
+                    </a>
                 </div>
                 <div class="dots-separator"></div>
+
                 <div class="dropdown">
                     <a class="dot-btn-wrapper dd-chart-btn-2" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false">
                         <i class="dot-btn-icon lnr-printer icon-gradient bg-heavy-rain"></i>
@@ -576,6 +578,7 @@
                     </div>
                 </div>
                 <div class="dots-separator"></div>
+
                 <div class="dropdown">
                     <a class="dot-btn-wrapper dd-chart-btn-2" aria-haspopup="true"
                         data-toggle="dropdown" aria-expanded="false">

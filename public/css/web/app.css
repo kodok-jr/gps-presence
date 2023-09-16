@@ -43064,6 +43064,14 @@ span.multiselect-native-select select {
   margin-left: 0 !important;
 }
 
+.app-theme-white .app-page-title-custom {
+  height: 0px !important;
+}
+
+.app-page-title .app-page-title-simple {
+  text-align: inherit !important;
+}
+
 .btn-group::before {
   position: absolute;
   left: -14px;
@@ -43115,6 +43123,15 @@ span.multiselect-native-select select {
   border: 1.5px solid !important;
   border-color: #1f9c5b !important;
   border-radius: 0.5rem !important;
+}
+
+.a.dot-btn-wrapper:hover {
+  background-color: #d6dff6 !important;
+  border-radius: 55% !important;
+}
+
+.bg-heavy-rain-custom {
+  background-image: linear-gradient(to top, #3c3c3c 0%, #0d6efd 100%) !important;
 }
 
 @media (max-width: 767.98px) {

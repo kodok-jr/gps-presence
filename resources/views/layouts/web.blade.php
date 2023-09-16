@@ -21,6 +21,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/web/app.css') }}" rel="stylesheet">
+
+    @stack('styles')
 </head>
 
 <body>
@@ -34,9 +36,15 @@
             <div class="app-header header-shadow">
                 <div class="app-header__logo">
                     <div class="logo-src"></div>
+                    {{-- <div class="page-title-head center-elem {{ request()->is('home') ? 'd-none' : '' }}" style="font-size: 1.10rem !important;">
+                        <span class="d-inline-block pr-1">
+                        <i class="fa fa-camera-retro opacity-6"></i>
+                        </span>
+                        <span class="d-inline-block" style="font-weight: 300 !important;">Gps::Presence</span>
+                    </div> --}}
                 </div>
 
-                <div class="app-header__content">
+                <div class="app-header__content {{ !request()->is('home') ? 'd-none' : '' }}">
                     <div class="app-header-right">
                         <div class="header-btn-lg pr-0">
                             <div class="widget-content p-0">
@@ -675,6 +683,8 @@
         <div class="app-drawer-overlay d-none animated fadeIn"></div>
 
     </div>
+
+    @stack('scripts')
 </body>
 
 </html>

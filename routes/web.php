@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], function () {
+
+    // Route::get('/home', HomeController::class)->only(['index'])->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
+    // Route::get('/home', HomeController::class)->only(['index'])->name('home');
+
+    /** Presences */
+    Route::resource('presences', PresenceController::class);
+});

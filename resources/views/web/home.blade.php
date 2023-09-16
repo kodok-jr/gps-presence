@@ -52,7 +52,7 @@
             <div class="col-md-6">
                 <div class="main-card mb-3 card">
                     <div class="card-body">
-                        <h5 class="card-title">Today</h5>
+                        <h5 class="card-title">Icon Buttons Grids I</h5>
                         <div class="grid-menu grid-menu-3col">
                             <div class="no-gutters row">
                                 <div class="col-sm-6 col-xl-4">
