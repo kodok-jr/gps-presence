@@ -30,6 +30,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - [Lipis::Flag-Icons](https://github.com/lipis/flag-icons).
 - [webcam.min.js](https://www.cdnpkg.com/webcamjs/file/webcam.min.js/).
 - [LeafLet](https://leafletjs.com).
+- [Sweetalert2.github.io](https://sweetalert2.github.io).
 
 ## Learning Laravel
 

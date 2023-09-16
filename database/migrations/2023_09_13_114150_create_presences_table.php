@@ -29,7 +29,8 @@ return new class extends Migration
             $table->time('time_out')->nullable();
             $table->string('photo_in');
             $table->string('photo_out')->nullable();
-            $table->text('locations');
+            $table->text('location_in');
+            $table->text('location_out')->nullable();
 
             $table->timestamps();
 

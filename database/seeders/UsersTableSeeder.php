@@ -33,6 +33,7 @@ class UsersTableSeeder extends Seeder
         if (!Member::count()) {
             $member = Member::create([
                 'name' => 'John Doe',
+                'number_id' => '1019901',
                 'email' => 'member@mail.com',
                 'password' => bcrypt('password')
             ]);

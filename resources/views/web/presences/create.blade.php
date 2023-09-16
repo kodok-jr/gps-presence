@@ -2,10 +2,10 @@
 
 @push('styles')
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <style>
         .webcam-capture, .webcam-capture video {
@@ -63,15 +63,29 @@
                 <div class="pt-3 card-body pl-2 pr-2 pb-0">
                     <input type="hidden" id="current_location">
                     <div class="webcam-capture"></div>
-
                     <hr>
                     <div id="map"></div>
                 </div>
                 <div class="pl-1 pr-1 d-block text-center rm-border card-footer">
+                    @if ($check > 0)
+                        @php
+                            $route_path = "/presences/$presence_id->id";
+                            $type = 'PUT';
+                        @endphp
+                        <button class="btn btn-danger btn-sm btn-block btn-icon" id="take_absent">
+                            <i class="lnr-camera btn-icon-wrapper"></i>
+                            Absen Pulang
+                        </button>
+                    @else
+                        @php
+                            $route_path = "/presences";
+                            $type = 'POST';
+                        @endphp
                     <button class="btn btn-primary btn-sm btn-block btn-icon" id="take_absent">
                         <i class="lnr-camera btn-icon-wrapper"></i>
                         Absen Masuk
                     </button>
+                    @endif
                 </div>
             </div>
         </div>
@@ -81,9 +95,13 @@
 
 @push('scripts')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script>
 
+        /**
+         * Configuration layout webcam
+         * ==================================================================== */
         Webcam.set({
             height: 480,
             width: 640,
@@ -126,6 +144,53 @@
         }
 
         function errorCallback(params) {}
+
+
+        /**
+         * Saving data
+         * ==================================================================== */
+        $('#take_absent').click(function () {
+            /** get user snap image */
+            Webcam.snap(function (uri) {
+                image = uri;
+            })
+
+            /** cath user location */
+            var save_location = $('#current_location').val();
+
+            $.ajax({
+                type: '{{ $type }}',
+                url: "{{ $route_path }}",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    image: image,
+                    location: save_location
+                },
+                cache: false,
+                success: function (response) {
+                    var status = response.split("|");
+
+                    if (status[0] == 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            text: status[1],
+                            confirmButtonText: 'Ok'
+                        });
+                        setTimeout(() => {
+                            location.href = '/home'
+                        }, 5000);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...!',
+                            text: 'Something went wrong! Please call support IT',
+                            confirmButtonText: 'Ok'
+                        })
+                    }
+                }
+            });
+        });
 
     </script>
 @endpush

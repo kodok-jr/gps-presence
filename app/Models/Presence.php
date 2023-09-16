@@ -17,7 +17,7 @@ class Presence extends Model
      */
     protected $fillable = [
         'uuid', 'user_id',
-        'presence_date', 'time_in', 'time_out', 'photo_in', 'photo_out', 'locations',
+        'presence_date', 'time_in', 'time_out', 'photo_in', 'photo_out', 'location_in', 'location_out',
         'state', 'type'
     ];
 

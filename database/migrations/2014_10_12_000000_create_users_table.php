@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('username')->nullable();
-            $table->bigInteger('id_number')->unique()->nullable();
+            $table->bigInteger('number_id')->unique()->nullable();
 
             $table->string('phone')->unique()->nullable();
             $table->text('address')->nullable();
