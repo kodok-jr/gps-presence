@@ -114,27 +114,48 @@ class PresenceController extends Controller
         $location = $request->location;
         $image = $request->image;
 
-        $presence = Presence::findOrFail($id);
+        /** Explode office location */
+        // $office_location = "-6.913773657106793, 107.82183640323136";
+        // $office_location_ex = explode(",", $location);
+        $office_latitude = -6.914253916561905;
+        $office_longitude = 107.82169067417507;
 
-        $folder_path = "public/presences/";
-        $format_filename = auth()->user()->uuid."-".date("Y-m-d")."-out";
+        /** Explode user location */
+        $user_location_ex = explode(",", $location);
+        $user_latitude = $user_location_ex[0];
+        $user_longitude = $user_location_ex[1];
 
-        $convert_image = explode(";base64", $image);
-        $file_image = base64_decode($convert_image[1]);
-        $filename = $format_filename.".png";
-        $file = $folder_path.$filename;
+        $length = $this->distance($office_latitude, $office_longitude, $user_latitude, $user_longitude);
 
-        $update = $presence->update([
-            'time_out' => date("H:i:s"),
-            'photo_out' => $filename,
-            'location_out' => $location
-        ]);
+        /** Distance position in radius */
+        $radius = round($length['meters']);
 
-        if ($update) {
-            Storage::put($file, $file_image);
-            echo "success|Terimakasih, Sudah melakukan absen pulang, Hati-hati dijalan..!|out";
+        /** Validation radius */
+        if ($radius > 100) {
+            echo "error|Maaf, Anda diluar jangkauan radius, jarak Anda ".$radius.".Meter dari Kampus|radius";
         } else {
-            echo "error|Maaf Gagal Absen, Silahkan Hubungi Tim IT|out";
+            $presence = Presence::findOrFail($id);
+
+            $folder_path = "public/presences/";
+            $format_filename = auth()->user()->uuid."-".date("Y-m-d")."-out";
+
+            $convert_image = explode(";base64", $image);
+            $file_image = base64_decode($convert_image[1]);
+            $filename = $format_filename.".png";
+            $file = $folder_path.$filename;
+
+            $update = $presence->update([
+                'time_out' => date("H:i:s"),
+                'photo_out' => $filename,
+                'location_out' => $location
+            ]);
+
+            if ($update) {
+                Storage::put($file, $file_image);
+                echo "success|Terimakasih, Sudah melakukan absen pulang, Hati-hati dijalan..!|out";
+            } else {
+                echo "error|Maaf Gagal Absen, Silahkan Hubungi Tim IT|out";
+            }
         }
     }
 
@@ -147,5 +168,26 @@ class PresenceController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Calculate of distance
+     *
+     * @param float $latitude_1 n $latitude_2 | $longitude_1 n $longitude_2
+     * @return compact
+     */
+    function distance ($latitude_1, $longitude_1, $latitude_2, $longitude_2) {
+        $theta = $longitude_1 - $longitude_2;
+        $miles = (sin(deg2rad($latitude_1)) * sin(deg2rad($latitude_2))) + (cos(deg2rad($latitude_1)) * cos(deg2rad($latitude_2)) * cos(deg2rad($theta)));
+        $miles = acos($miles);
+        $miles = rad2deg($miles);
+        $miles = $miles * 60 * 1.1515;
+
+        $feet = $miles * 5200;
+        $yeards = $feet / 3;
+        $kilometers = $miles * 1.609344;
+        $meters = $kilometers * 1000;
+
+        return compact('meters');
     }
 }

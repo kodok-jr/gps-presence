@@ -80,7 +80,10 @@
                         <source src="{{ asset('sounds/notification-out.mp3') }}" type="audio/mpeg">
                     </audio>
                     <audio id="notification_error">
-                        <source src="{{ asset('sounds/BotikaTTS-error.mp3') }}" type="audio/mpeg">
+                        <source src="{{ asset('sounds/notification-error-en.mp3') }}" type="audio/mpeg">
+                    </audio>
+                    <audio id="notification_error_radius">
+                        <source src="{{ asset('sounds/notification-error-outside.mp3') }}" type="audio/mpeg">
                     </audio>
                 <!-- End Sounds
                     /=====================================/-->
@@ -124,6 +127,7 @@
         var notification_in = document.getElementById('notification_in')
         var notification_out = document.getElementById('notification_out')
         var notification_error = document.getElementById('notification_error')
+        var notification_error_radius = document.getElementById('notification_error_radius')
 
         /**
          * Configuration layout webcam
@@ -161,7 +165,7 @@
             var marker = L.marker([params.coords.latitude, params.coords.longitude]).addTo(map);
 
             /** radius location */
-            var circle = L.circle([params.coords.latitude, params.coords.longitude], {
+            var circle = L.circle([-6.914253916561905, 107.82169067417507], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
@@ -205,20 +209,30 @@
 
                         Swal.fire({
                             icon: 'success',
-                            text: 'Selamat, Anda berhasil absen..!',
+                            text: 'Terimakasih, Telah melakukan absen..!',
                             confirmButtonText: 'Ok'
                         }).then((result) => {
                             /* return redirect back to home page */
                             location.href = '/home'
                         });
                     } else {
-                        notification_error.play();
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...!',
-                            text: 'Something went wrong! Please call support IT',
-                            confirmButtonText: 'Ok'
-                        })
+                        if (status[2] == 'radius') {
+                            notification_error_radius.play();
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...!',
+                                text: status[1],
+                                confirmButtonText: 'Ok'
+                            })
+                        } else {
+                            notification_error.play();
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...!',
+                                text: 'Something went wrong! Please call support IT',
+                                confirmButtonText: 'Ok'
+                            });
+                        }
                     }
                 }
             });
