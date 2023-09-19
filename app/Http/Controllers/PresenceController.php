@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Ui\Presets\Preset;
+use Illuminate\Support\Facades\DB;
 
 class PresenceController extends Controller
 {
@@ -34,7 +35,17 @@ class PresenceController extends Controller
         $check = Presence::where('presence_date', $today)->where('user_id', $user_id)->count();
         $presence_id = Presence::where('presence_date', $today)->where('user_id', $user_id)->first();
 
-        return view('web.presences.create', compact('check', 'presence_id'));
+        /** Presence today */
+        $presence_today = DB::table('presences')
+                                ->where('user_id', $user_id)
+                                ->where('presence_date', $today)
+                                ->first();
+
+        if ($presence_today && !is_null($presence_today->time_out)) {
+            return redirect()->route('home');
+        }
+
+        return view('web.presences.create', compact('check', 'presence_id', 'presence_today'));
     }
 
     /**

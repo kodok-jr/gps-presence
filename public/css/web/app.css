@@ -43134,6 +43134,31 @@ span.multiselect-native-select select {
   background-image: linear-gradient(to top, #3c3c3c 0%, #0d6efd 100%) !important;
 }
 
+.icon-wrapper-custom {
+  display: block !important;
+  border-radius: 15px !important;
+  padding-top: 8px !important;
+  line-height: 17px !important;
+}
+
+.scroll-area-sm-sm {
+  height: auto !important;
+  overflow-x: hidden !important;
+  border-radius: 40px !important;
+}
+
+.image-rounded-custom {
+  width: 70px !important;
+  display: list-item !important;
+  margin: auto !important;
+}
+
+.badge-pill-custom {
+  top: -14px !important;
+  right: -19px !important;
+  padding: 4px 3px !important;
+}
+
 @media (max-width: 767.98px) {
   .col-md-2 {
     max-width: 104px !important;

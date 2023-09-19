@@ -520,7 +520,7 @@
                 <div class="dots-separator"></div>
 
                 <div class="dropdown">
-                    <a href="{{ route('presences.create') }}" class="p-0 btn btn-link">
+                    <a href="{{ route('presences.create') }}" class="p-0 btn btn-link {{ $presence_today != null && $presence_today->time_out != null ? 'disabled' : '' }}">
                         <span class="icon-wrapper icon-wrapper-alt rounded-circle">
                             <span class="icon-wrapper-bg bg-primary"></span>
                             <i class="icon text-primary fa fa-camera-retro"></i>

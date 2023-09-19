@@ -27,4 +27,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fu
 
     /** Presences */
     Route::resource('presences', PresenceController::class);
+
+    /** Leaderboard */
+    Route::get('leaderboards', 'LeaderboardController@index')->name('leaderboard.index');
 });
