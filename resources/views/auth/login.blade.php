@@ -89,6 +89,18 @@
         </div>
     </div>
     <script type="text/javascript" src="{{ asset('js/web/app.js') }}"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(Session::has('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                text: "{{ Session::get('success')[0] }}",
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
 </body>
 
 </html>

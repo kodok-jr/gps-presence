@@ -146,9 +146,9 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="font-icon-wrapper">
-                                    <a href="{{ route('leaderboard.index') }}" class="m-0 btn-icon btn-icon-only btn btn-link btn-sm">
+                                    <a href="{{ route('leaderboards.index') }}" class="m-0 btn-icon btn-icon-only btn btn-link btn-sm">
                                         <i class="fa fa-history icon-gradient bg-happy-itmeo"> </i>
-                                        <span class="badge badge-pill badge-pill-custom badge-danger">0</span>
+                                        <span class="badge badge-pill badge-pill-custom badge-danger">{{ $leaderboards->count() }}</span>
                                     </a>
                                     <p>Leaderboard</p>
                                 </div>

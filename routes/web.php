@@ -25,9 +25,13 @@ Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fu
     Route::get('/home', 'HomeController@index')->name('home');
     // Route::get('/home', HomeController::class)->only(['index'])->name('home');
 
+    /** Profiles */
+    Route::put('profiles/avatar/{update}', 'ProfileController@avatar')->name('profiles.avatar.update');
+    Route::resource('profiles', ProfileController::class);
+
     /** Presences */
     Route::resource('presences', PresenceController::class);
 
     /** Leaderboard */
-    Route::get('leaderboards', 'LeaderboardController@index')->name('leaderboard.index');
+    Route::resource('leaderboards', LeaderboardController::class);
 });

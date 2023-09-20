@@ -19,6 +19,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('username')->nullable();
+            $table->string('position')->nullable();
             $table->bigInteger('number_id')->unique()->nullable();
 
             $table->string('phone')->unique()->nullable();

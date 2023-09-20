@@ -79,12 +79,12 @@
                                                     <div class="scrollbar-container ps">
                                                         <ul class="nav flex-column">
                                                             <li class="nav-item">
-                                                                <a href="javascript:void(0);" class="nav-link">Recover Password</a>
+                                                                <a href="{{ route('profiles.index') }}" class="nav-link">
+                                                                    Profile Settings
+                                                                </a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a href="javascript:void(0);" class="nav-link">
-                                                                    Settings
-                                                                </a>
+                                                                <a href="javascript:void(0);" class="nav-link">Recover Password</a>
                                                             </li>
                                                             <li class="nav-item-divider nav-item"></li>
                                                             <li class="nav-item-btn text-right nav-item">

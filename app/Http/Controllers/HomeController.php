@@ -50,6 +50,13 @@ class HomeController extends Controller
                                 ->whereRaw('YEAR(presence_date)="'.$this_year.'"')  // take data this year
                                 ->first();
 
-        return view('home', compact('presence_today', 'presence_this_month', 'presence_recap'));
+        /** Presences leaderboard */
+        $leaderboards = DB::table('presences')
+                                ->join('users', 'presences.user_id', '=', 'users.id')
+                                ->where('presence_date', date("Y-m-d"))
+                                ->orderBy('time_in')
+                                ->get();
+
+        return view('home', compact('presence_today', 'presence_this_month', 'presence_recap', 'leaderboards'));
     }
 }
