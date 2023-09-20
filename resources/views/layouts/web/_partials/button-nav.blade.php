@@ -28,52 +28,10 @@
                 <div class="dots-separator"></div>
 
                 <div class="dropdown">
-                    <a class="dot-btn-wrapper dd-chart-btn-2" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false">
-                        <i class="dot-btn-icon lnr-printer icon-gradient bg-heavy-rain"></i>
+                    <a href="{{ route('histories.index') }}" class="dot-btn-wrapper">
+                    {{-- <a class="dot-btn-wrapper dd-chart-btn-2" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false"> --}}
+                        <i class="dot-btn-icon lnr-printer icon-gradient {{ request()->is('histories') ? 'bg-heavy-rain-custom' : 'bg-heavy-rain' }}""></i>
                     </a>
-                    <div tabindex="-1" role="menu" aria-hidden="true"
-                        class="dropdown-menu-xl rm-pointers dropdown-menu">
-                        <div class="dropdown-menu-header">
-                            <div class="dropdown-menu-header-inner bg-premium-dark">
-                                <div class="menu-header-image"
-                                    style="background-image: url('assets/images/dropdown-header/abstract4.jpg');">
-                                </div>
-                                <div class="menu-header-content text-white">
-                                    <h5 class="menu-header-title">Users Online</h5>
-                                    <h6 class="menu-header-subtitle">Recent Account Activity
-                                        Overview</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="widget-chart">
-                            <div class="widget-chart-content">
-                                <div class="icon-wrapper rounded-circle">
-                                    <div class="icon-wrapper-bg opacity-9 bg-focus"></div>
-                                    <i class="lnr-users text-white"></i>
-                                </div>
-                                <div class="widget-numbers">
-                                    <span>344k</span>
-                                </div>
-                                <div class="widget-subheading pt-2"> Profile views since last login
-                                </div>
-                                <div class="widget-description text-danger">
-                                    <span class="pr-1"> <span>176%</span></span>
-                                    <i class="fa fa-arrow-left"></i>
-                                </div>
-                            </div>
-                            <div class="widget-chart-wrapper">
-                                <div id="dashboard-sparkline-carousel-4-pop"></div>
-                            </div>
-                        </div>
-                        <ul class="nav flex-column">
-                            <li class="nav-item-divider mt-0 nav-item"></li>
-                            <li class="nav-item-btn text-center nav-item">
-                                <button class="btn-shine btn-wide btn-pill btn btn-warning btn-sm">
-                                    <i class="fa fa-cog fa-spin mr-2"></i> View Details
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="dots-separator"></div>
 

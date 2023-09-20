@@ -94,6 +94,15 @@
     right: -19px !important;
     padding: 4px 3px !important;
 }
+span.select2-selection.select2-selection--single {
+    height: calc(1.8125rem + 2px) !important;
+}
+.select2-container--bootstrap4 .select2-selection--single {
+    padding: 0.55rem 1.125rem 0.75rem 0.375rem !important;
+}
+.input-group-text {
+    padding: 0.375rem .35rem !important;
+}
 @media (max-width: 767.98px) {
     .col-md-2 {
         max-width: 104px !important;

@@ -34,4 +34,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fu
 
     /** Leaderboard */
     Route::resource('leaderboards', LeaderboardController::class);
+
+    /** Histories */
+    Route::resource('histories', HistoryController::class);
 });

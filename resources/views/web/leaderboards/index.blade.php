@@ -19,7 +19,7 @@
                                                 <div class="widget-content-wrapper">
                                                     <div class="widget-content-left mr-3">
                                                         <div class="widget-content-left">
-                                                            <img width="45" class="rounded" src="{{ asset('storage/avatars/'.$item->name.'.png') }}" alt="">
+                                                            <img width="45" class="rounded" src="{{ file_exists(storage_path('app/public/avatars/'.$item->name.'.png')) ? asset('storage/avatars/'.$item->name.'.png') : asset('storage/'.$item->avatar) }}" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="widget-content-left flex2">
