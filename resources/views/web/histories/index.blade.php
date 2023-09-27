@@ -11,7 +11,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6 mb-2">
+                            <div class="col-md-6 mb-2 p-0">
                                 <div class="input-group" style="width: 100% !important;">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Month!</span>
@@ -26,7 +26,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-2">
+                            <div class="col-md-6 mb-2 p-0">
                                 <div class="input-group" style="width: 100% !important;">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Year!</span>
@@ -45,7 +45,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6 text-right">
+                            <div class="col-md-6 p-0">
                                 <button type="submit" class="mb-2 btn-icon btn-square btn btn-primary" id="search_history"><i class="lnr-magnifier"></i> Search</button>
                             </div>
                         </div>

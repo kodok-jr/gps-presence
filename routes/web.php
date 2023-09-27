@@ -32,6 +32,9 @@ Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fu
     /** Presences */
     Route::resource('presences', PresenceController::class);
 
+    /** Absences */
+    Route::resource('absences', AbsenceController::class);
+
     /** Leaderboard */
     Route::resource('leaderboards', LeaderboardController::class);
 

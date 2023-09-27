@@ -586,6 +586,16 @@
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    @if(Session::has('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                text: "{{ Session::get('success')[0] }}",
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
+
     @stack('scripts')
 </body>
 

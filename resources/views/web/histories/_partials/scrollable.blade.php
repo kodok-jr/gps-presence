@@ -1,3 +1,16 @@
+@if ($histories->isEmpty())
+    <div class="font-icon-wrapper float-left mr-3 mb-3">
+        <div class="loader-wrapper d-flex justify-content-center align-items-center">
+            <div class="loader">
+                <div class="ball-clip-rotate-multiple">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <p>No any histories for this time..!</p>
+    </div>
+@endif
 @foreach ($histories as $history)
     <li class="list-group-item p-2 pl-3">
         <div class="widget-content p-0">
