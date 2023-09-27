@@ -121,7 +121,7 @@
                                 <div class="font-icon-wrapper">
                                     <a href="{{ route('absences.index') }}" class="m-0 btn-icon btn-icon-only btn btn-link btn-sm">
                                         <i class="fa fa-taxi icon-gradient bg-happy-itmeo"> </i>
-                                        <span class="badge badge-pill badge-pill-custom badge-danger">0</span>
+                                        <span class="badge badge-pill badge-pill-custom badge-danger">{{ $absence_recap->sum_permits }}</span>
                                     </a>
                                     <p>Izin</p>
                                 </div>
@@ -130,7 +130,7 @@
                                 <div class="font-icon-wrapper">
                                     <button class="m-0 btn-icon btn-icon-only btn btn-link btn-sm">
                                         <i class="fa fa-medkit icon-gradient bg-happy-itmeo"> </i>
-                                        <span class="badge badge-pill badge-pill-custom badge-danger">0</span>
+                                        <span class="badge badge-pill badge-pill-custom badge-danger">{{ $absence_recap->sum_diseased }}</span>
                                     </button>
                                     <p>Sakit</p>
                                 </div>

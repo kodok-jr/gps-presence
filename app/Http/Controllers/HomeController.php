@@ -57,6 +57,15 @@ class HomeController extends Controller
                                 ->orderBy('time_in')
                                 ->get();
 
-        return view('home', compact('presence_today', 'presence_this_month', 'presence_recap', 'leaderboards'));
+        /** Absences submission recap */
+        $absence_recap = DB::table('absences')
+                                ->selectRaw('SUM(IF(status="permit", 1, 0)) as sum_permits, SUM(IF(status="diseased", 1, 0)) as sum_diseased')   // get total permits and totally sick
+                                ->where('user_id', $user_id)
+                                ->whereRaw('MONTH(absence_date)="'.$this_month.'"')    // take data this month
+                                ->whereRaw('YEAR(absence_date)="'.$this_year.'"')  // take data this year
+                                ->where('approval', 'approved')
+                                ->first();
+
+        return view('home', compact('presence_today', 'presence_this_month', 'presence_recap', 'leaderboards', 'absence_recap'));
     }
 }
