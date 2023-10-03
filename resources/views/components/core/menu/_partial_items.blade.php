@@ -16,8 +16,8 @@
         <span class="nav-text">{{ $menu['name'] }}</span>
         @if (isset($menu['submenus'])) <b class="caret"></b> @endif
     </a>
-    @if (isset($menu['submenus']))
 
+    @if (isset($menu['submenus']))
         <ul class="collapse {{ request()->is($menu['active_url']) ? 'show' : null }}" id="{{ Str::slug($menu['name'], '-') }}" data-parent="#sidebar-menu">
             <div class="sub-menu">
                 {!! $view_menu($menu['submenus']) !!}

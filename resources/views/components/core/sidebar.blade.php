@@ -10,7 +10,6 @@
     }
 @endphp
 
-{{-- {{ dd($view_menu) }} --}}
 <ul class="nav sidebar-inner" id="sidebar-menu">
     <li class="{{ request()->is(config('larapattern.prefix', 'administrator')) ? 'active' : null }}">
         <a class="sidenav-item-link" href="{{ route('administrator.index') }}">
