@@ -99,6 +99,27 @@
                     /=====================================/-->
                 <x-larapattern-header></x-larapattern-header>
                 <!-- End Header /=====================================/-->
+
+
+                <!-- Content
+                    /=====================================/-->
+                <div class="content-wrapper">
+                    <div class="content pt-3">
+                        <div class="breadcrumb-wrapper mb-3 breadcrumb-contacts">
+                            <div>
+                                <h1>{{ $title ?? 'Title page not found...!' }}</h1>
+                                <nav aria-label="breadcrumb">
+                                    <x-larapattern-breadcrumb />
+                                </nav>
+                            </div>
+                            <div></div>
+                        </div>
+
+                        {{ $slot }}
+
+                    </div>
+                </div>
+                <!-- End Content /=====================================/-->
             </div>
         </div>
 

@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\LarapatternOption;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Cache;
 
 class Larapattern

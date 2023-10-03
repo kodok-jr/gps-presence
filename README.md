@@ -32,6 +32,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - [LeafLet](https://leafletjs.com).
 - [Sweetalert2.github.io](https://sweetalert2.github.io).
 - [Botika.Online](https://botika.online/TextToSpeech/index.php).
+- [Yajra-BOX DataTables](https://yajrabox.com/docs/laravel-datatables/9.0/installation).
 
 ## Learning Laravel
 

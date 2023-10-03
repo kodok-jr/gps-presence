@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Administrator\UserManagement\Accounts;
 
+use App\DataTables\UserDataTables;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        // larapattern()->allow('administrator.management.accounts.admin.index');
+
+        return UserDataTables::view('larapattern.index', [
+            'fooe' => 'bar'
+        ]);
     }
 
     /**

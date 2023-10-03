@@ -1,0 +1,63 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Models\{{ model }};
+use App\DataTables\DataTables;
+use App\Contracts\DatatablesInterface;
+
+class {{ filename }} extends DataTables implements DatatablesInterface
+{
+    /**
+    * Datatables function
+    *
+    * @return []
+    */
+    public function render ()
+    {
+        /** Data from controller */
+        $data = self::$data;
+
+        return $this->eloquent({{ model }}::query())
+            ->escapeColumns([])
+            ->addIndexColumn()
+            ->make(true);
+    }
+
+    /**
+    * Datatables option
+    *
+    * @return []
+    */
+    public function options ()
+    {
+        /** Data from controller */
+        $data = self::$data;
+
+        return [
+            'title' => 'List of {{ model }}',
+            'buttons' => null,   // e.g : view('user.actions.create')
+            'fields' => [ __('No'), ],  // table header
+            'foos' => [     // custom data array. You can call in your blade with variable $foos
+                'bar' => 'baz',
+                'baz' => 'bar',
+            ],
+
+            /** Datatables server side options */
+            'options' => [
+                'processing' => true,
+                'serverSide' => true,
+                'ajax' => request()->fullurl(),
+                'columns' => [
+                    [ 'data' => 'DT_RowIndex', 'orderable' => false, 'searchable' => false, 'class' => 'text-center' ],
+                ],
+                'order' => [
+                    [0, 'desc']
+                ],
+                'filterColumn' => [
+                    'exclude' => [0],
+                ]
+            ]
+        ];
+    }
+}
