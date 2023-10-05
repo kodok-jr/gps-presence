@@ -1,8 +1,8 @@
 {
     "/js/web/app.js": "/js/web/app.js",
     "/js/admin/app.js": "/js/admin/app.js",
-    "/css/web/app.css": "/css/web/app.css",
     "/css/admin/app.css": "/css/admin/app.css",
+    "/css/web/app.css": "/css/web/app.css",
     "/images/architectui/favicon-laravel.ico": "/images/architectui/favicon-laravel.ico",
     "/images/architectui/favicon-underconstruction.ico": "/images/architectui/favicon-underconstruction.ico",
     "/images/architectui/favicon.png": "/images/architectui/favicon.png",

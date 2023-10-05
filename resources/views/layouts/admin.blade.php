@@ -6,6 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" href="{{ asset('images/favicon-underconstruction.ico') }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -19,10 +20,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
     <link rel='stylesheet' href='https://unpkg.com/nprogress@0.2.0/nprogress.css'/>
+
     @stack('styles')
 
     <!-- Scripts -->
-    {{-- <script src="{{ mix('js/admin/app.js') }}" defer></script> --}}
     <script src='https://unpkg.com/nprogress@0.2.0/nprogress.js'></script>
 </head>
 
@@ -120,6 +121,11 @@
                     </div>
                 </div>
                 <!-- End Content /=====================================/-->
+
+                <!-- Footer
+                    /=====================================/-->
+                <x-larapattern-footer />
+                <!-- End Footer /=====================================/-->
             </div>
         </div>
 

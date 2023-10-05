@@ -4,6 +4,10 @@
 // Variables
 @import 'variables';
 
+@import '@fortawesome/fontawesome-free';
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "~datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css";
+
 // Sleek-dashboard
 @import '../../assets/templates/sleek/dist/assets/css/sleek.css';
 

@@ -10,7 +10,10 @@ use Illuminate\Support\ServiceProvider;
 use App\Console\Commands\DataTablesCommand;
 use App\View\Components\Core\Alert;
 use App\View\Components\Core\Breadcrumb;
+use App\View\Components\Core\Footer;
 use App\View\Components\Core\Layout;
+use App\View\Components\Materials\Card;
+use App\View\Components\Materials\DataTables;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Gate;
 
@@ -66,5 +69,12 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('larapattern-sidebar', Sidebar::class);
         Blade::component('larapattern-breadcrumb', Breadcrumb::class);
         Blade::component('larapattern-alert', Alert::class);
+        Blade::component('larapattern-footer', Footer::class);
+
+        /**
+         * View Components Materials
+         */
+        Blade::component('larapattern-card', Card::class);
+        Blade::component('larapattern-datatables', DataTables::class);
     }
 }
