@@ -17,7 +17,6 @@
 
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
-    <script src="{{ mix('js/web/app.js') }}"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/web/app.css') }}" rel="stylesheet">
@@ -597,6 +596,8 @@
     @endif
 
     @stack('scripts')
+
+    <script src="{{ asset('js/web/app.js') }}"></script>
 </body>
 
 </html>

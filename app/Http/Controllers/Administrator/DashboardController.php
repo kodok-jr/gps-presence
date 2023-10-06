@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,15 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $today = date('Y-m-d');
+
+         /** Presence recap */
+         $presence_recap = DB::table('presences')
+                                ->selectRaw('COUNT(user_id) as sum_present, SUM(IF(time_in > "07:00", 1, 0)) as sum_delayed')    // get summery presence & delayed of this month
+                                ->where('presence_date', $today)
+                                ->first();
+
+        return view('admin.home', compact('presence_recap'));
     }
 
     /**

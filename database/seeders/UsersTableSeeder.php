@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
             $admins = [
                 [
                     'name' => 'Super Admin',
-                    'email' => 'admin@mail.com',
+                    'email' => 'superadmin@mail.com',
                     'password' => bcrypt('password')
                 ]
             ];
@@ -57,10 +57,32 @@ class UsersTableSeeder extends Seeder
             foreach ($members as $key => $value) {
                 Member::create($value);
             }
+
+            $role_administrator = Role::create([
+                'name' => 'Administrator',
+                'description' => 'Another level for example several role',
+                'gates' => []
+            ]);
+
+            $role_administrator_sync = Role::findOrFail(2);
+
+            $administrator = Admin::create([
+                'name' => 'Administrator',
+                'email' => 'administrator@mail.com',
+                'password' => bcrypt('password')
+            ]);
+
+            $administrator->roles()->sync([$role_administrator_sync->id]);
+
         }
 
         $this->command->info('================ SUPERADMIN ======================');
-        $this->command->info('email     : admin@mail.com');
+        $this->command->info('email     : superadmin@mail.com');
+        $this->command->info('password  : password');
+        $this->command->info('==================================================');
+        $this->command->info('');
+        $this->command->info('================ ADMINISTRATOR ======================');
+        $this->command->info('email     : administrator@mail.com');
         $this->command->info('password  : password');
         $this->command->info('==================================================');
         $this->command->info('');
