@@ -2,9 +2,9 @@
 
     <div class="row">
         <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="card widget-block p-4 rounded bg-primary border">
+            <div class="card widget-block p-4 rounded bg-danger border">
                 <div class="card-block" style="text-align: end;">
-                    <h4 class="text-white  ">90%</h4>
+                    <h4 class="text-white  ">Total Mahasiswa/i</h4>
                     <div class="icon rounded-circle mr-4 bg-white" style="width: 70px; height: 70px; text-align: center; line-height: 70px;">
                         <i class="mdi mdi-account-group"></i>
                     </div>
@@ -12,52 +12,52 @@
                     <div class="progress  " style="height: 5px;">
                         <div class="progress-bar bg-white" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="pt-2">Total Mahasiswa/i</p>
+                    <p class="pt-2">90%</p>
                 </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="card widget-block p-4 rounded bg-success border">
                 <div class="card-block" style="text-align: end;">
-                    <h4 class="text-white  ">90%</h4>
+                    <h4 class="text-white  ">Hadir</h4>
                     <div class="icon rounded-circle mr-4 bg-white" style="width: 70px; height: 70px; text-align: center; line-height: 70px;">
                         <i class="mdi mdi-barcode-scan"></i>
                     </div>
-                    <p class="pb-2">{{ $presence_recap->sum_present }}</p>
+                    <p class="pb-2">{{ $presence_recap->sum_present ?? 0 }}</p>
                     <div class="progress  " style="height: 5px;">
                         <div class="progress-bar bg-white" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="pt-2">Mahasiswa/i Hadir</p>
+                    <p class="pt-2">90%</p>
                 </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="card widget-block p-4 rounded bg-info border">
                 <div class="card-block" style="text-align: end;">
-                    <h4 class="text-white  ">90%</h4>
+                    <h4 class="text-white  ">Izin</h4>
                     <div class="icon rounded-circle mr-4 bg-white" style="width: 70px; height: 70px; text-align: center; line-height: 70px;">
                         <i class="mdi mdi-tag-faces"></i>
                     </div>
-                    <p class="pb-2">{{ $presence_recap->sum_delayed }}</p>
+                    <p class="pb-2">{{ $absence_recap->sum_permits ?? 0 }}</p>
                     <div class="progress  " style="height: 5px;">
                         <div class="progress-bar bg-white" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="pt-2">Mahasiswa/i Izin</p>
+                    <p class="pt-2">90%</p>
                 </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="card widget-block p-4 rounded bg-warning border">
                 <div class="card-block" style="text-align: end;">
-                    <h4 class="text-white  ">90%</h4>
+                    <h4 class="text-white  ">Sakit</h4>
                     <div class="icon rounded-circle mr-4 bg-white" style="width: 70px; height: 70px; text-align: center; line-height: 70px;">
                         <i class="mdi mdi-ambulance"></i>
                     </div>
-                    <p class="pb-2">5300</p>
+                    <p class="pb-2">{{ $absence_recap->sum_diseased ?? 0 }}</p>
                     <div class="progress  " style="height: 5px;">
                         <div class="progress-bar bg-white" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="pt-2">Mahasiswa/i Sakit</p>
+                    <p class="pt-2">90%</p>
                 </div>
             </div>
         </div>

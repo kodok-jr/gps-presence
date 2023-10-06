@@ -23,7 +23,14 @@ class DashboardController extends Controller
                                 ->where('presence_date', $today)
                                 ->first();
 
-        return view('admin.home', compact('presence_recap'));
+        /** Absences submission recap */
+        $absence_recap = DB::table('absences')
+                                ->selectRaw('SUM(IF(status="permit", 1, 0)) as sum_permits, SUM(IF(status="diseased", 1, 0)) as sum_diseased')   // get total permits and totally sick
+                                ->where('absence_date', $today)
+                                ->where('approval', 'approved')
+                                ->first();
+
+        return view('admin.home', compact('presence_recap', 'absence_recap'));
     }
 
     /**
