@@ -19,6 +19,7 @@ class Larapattern
     public function allow($gates)
     {
         if (Gate::denies($gates)) {
+            dd($gates);
             return abort(403);
         }
     }

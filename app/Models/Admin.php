@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Admin extends User
+class Admin extends User  implements Authenticatable
 {
-    use HasFactory;
+    use HasFactory, AuthenticableTrait;
 
     protected static $singleTableType = Admin::class;
 }

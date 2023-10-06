@@ -13,7 +13,7 @@ trait LarapatternTraits
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function roles () {
-        return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
+        return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id', 'id', 'id');
     }
 
     /**

@@ -21,6 +21,7 @@ class User extends Authenticatable
      *
      */
     protected $table = 'users';
+
     protected static $singleTableTypeField = 'type';
     protected static $singleTableSubclasses = [
         Admin::class,
