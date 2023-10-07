@@ -1,5 +1,5 @@
 <?php
 
-namespace App\Constracts;
+namespace App\Contracts;
 
 interface RepositoryInterface {}

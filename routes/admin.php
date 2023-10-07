@@ -31,10 +31,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Administrator'], function () 
                 Route::resource('student', App\Http\Controllers\Administrator\UserManagement\Accounts\MemberController::class);
             });
 
-            // Route::group(['prefix' => 'access', 'as' => 'access.'], function () {
-            //     Route::resource('roles', UserManagement\ModuleAccess\RoleController::class);
-            //     Route::resource('permissions', UserManagement\ModuleAccess\PermissionController::class)->only(['update']);
-            // });
+            Route::group(['prefix' => 'access', 'as' => 'access.'], function () {
+                Route::resource('roles', App\Http\Controllers\Administrator\UserManagement\ModuleAccess\RoleController::class);
+                Route::resource('permissions', App\Http\Controllers\Administrator\UserManagement\ModuleAccess\PermissionController::class)->only(['update']);
+            });
         });
 
     });

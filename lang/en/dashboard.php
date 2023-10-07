@@ -18,8 +18,8 @@ return [
 
         'submenus' => [
             'name' => [
-                'user' => 'User Admin',
-                'student' => 'Students',
+                'user' => 'Admin',
+                'student' => 'Student',
                 'role-permissions' => 'Role & Permissions',
                 'profile' => 'Update Profile'
             ],

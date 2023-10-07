@@ -18,7 +18,7 @@ class DataTables extends BaseDataTables
      * @param strin $blade
      * @param array $data
      */
-    public static function view(?String $blade = 'lapattern.index', ?Array $data = [])
+    public static function view(?String $blade = 'larapattern.index', ?Array $data = [])
     {
         return self::build($blade, $data);
     }

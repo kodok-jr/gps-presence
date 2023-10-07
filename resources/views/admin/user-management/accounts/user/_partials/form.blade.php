@@ -1,23 +1,23 @@
-@component(lapattern()->component_path('form_row'), ['label_name' => __('Fullname'), 'label_id' => 'name', 'message' => $errors->first('name'), 'required' => true])
+@component(larapattern()->component_path('form_row'), ['label_name' => __('Fullname'), 'label_id' => 'name', 'message' => $errors->first('name'), 'required' => true])
 
     {{ Form::text('name', old('name', $user->name), ['class' => 'form-control form-control-sm', 'id' => 'name', 'placeholder' => __('Fullname')]) }}
 
 @endcomponent
 
-@component(lapattern()->component_path('form_row'), ['label_name' => __('E-mail'), 'label_id' => 'email', 'message' => $errors->first('email'), 'required' => true])
+@component(larapattern()->component_path('form_row'), ['label_name' => __('E-mail'), 'label_id' => 'email', 'message' => $errors->first('email'), 'required' => true])
 
     {{ Form::email('email', old('email', $user->email), ['class' => 'form-control form-control-sm', 'id' => 'email', 'placeholder' => __('e.g: example@mail.com')]) }}
 
 @endcomponent
 
-@component(lapattern()->component_path('form_row'), ['label_name' => __('Password'), 'label_id' => 'password', 'message' => $errors->first('password'), 'required' => $edited ? false : true])
+@component(larapattern()->component_path('form_row'), ['label_name' => __('Password'), 'label_id' => 'password', 'message' => $errors->first('password'), 'required' => $edited ? false : true])
 
     {{ Form::password('password', ['class' => 'form-control form-control-sm', 'id' => 'password', 'placeholder' => '************']) }}
 
 @endcomponent
 
 @if (isset($roles))
-    @component(lapattern()->component_path('form_row'), ['label_name' => __('Roles'), 'label_id' => 'role_id', 'message' => $errors->first('roles'), 'required' => true])
+    @component(larapattern()->component_path('form_row'), ['label_name' => __('Roles'), 'label_id' => 'role_id', 'message' => $errors->first('roles'), 'required' => true])
 
         @php
             ($edited) ? $selected = $role_selected : $selected = [];

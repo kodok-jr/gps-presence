@@ -16,7 +16,7 @@ class UserRepository extends Repository implements RepositoryInterface
      */
     public function __construct()
     {
-        parent::__construct(app(config('lapattern.user', User::class)));
+        parent::__construct(app(config('larapattern.user', User::class)));
     }
 
     public function createNewUser(Request $request, $flasher)
