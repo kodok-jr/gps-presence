@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Administrator\UserManagement\Accounts;
 
-use App\DataTables\UserDataTables;
+use App\DataTables\MemberDataTables;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
-class AdminController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +16,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        larapattern()->allow('administrator.management.accounts.admin.index');
-
+        larapattern()->allow('administrator.management.accounts.student.index');
         // $user = auth()->guard('admin')->user();
 
-        // if (!Gate::forUser($user)->allows('administrator.management.accounts.admin.index')) { abort(403); }
+        // if (!Gate::forUser($user)->allows('administrator.management.accounts.student.index')) { abort(403); }
 
-        return UserDataTables::view('larapattern.index', [
+        return MemberDataTables::view('larapattern.index', [
             'fooe' => 'bar'
         ]);
     }

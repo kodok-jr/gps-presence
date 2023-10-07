@@ -21,7 +21,7 @@ class Authenticate extends Middleware
                     return '/login';
                     break;
 
-                case 'admin':
+                case 'administrator':
                     return '/administrator/login';
                     break;
             }

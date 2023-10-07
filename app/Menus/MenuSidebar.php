@@ -52,6 +52,42 @@
                         ]
                     ],
                 ],
+
+                /*
+                | Account 
+                |--------------------------------------------------------------------------
+                */
+                [
+                    'gate' => 'administrator.management.accounts.student.index',
+                    'name' => __('dashboard.sidebar.submenus.name.student'),
+                    'description' => __('dashboard.sidebar.submenus.description.student'),
+                    'route' => ['administrator.management.accounts.student.index', []],
+                    'active_url' => 'administrator/management/accounts/student*',
+                    'is_active' => 'management/accounts/student*',
+                    'id' => '',
+                    'permissions' => [
+                        [
+                            'gate' => 'administrator.management.accounts.student.create',
+                            'title' => __('dashboard.sidebar.submenus.permissions.title.create.student'),
+                            'description' => __('dashboard.sidebar.submenus.permissions.description.create.student')
+                        ],
+                        [
+                            'gate' => 'administrator.management.accounts.student.update',
+                            'title' => __('dashboard.sidebar.submenus.permissions.title.edit.student'),
+                            'description' => __('dashboard.sidebar.submenus.permissions.description.edit.student')
+                        ],
+                        [
+                            'gate' => 'administrator.management.accounts.student.show',
+                            'title' => __('dashboard.sidebar.submenus.permissions.title.show.student'),
+                            'description' => __('dashboard.sidebar.submenus.permissions.description.show.student')
+                        ],
+                        [
+                            'gate' => 'administrator.management.accounts.student.destroy',
+                            'title' => __('dashboard.sidebar.submenus.permissions.title.delete.student'),
+                            'description' => __('dashboard.sidebar.submenus.permissions.description.delete.student')
+                        ]
+                    ],
+                ],
             ],
         ],
     ];

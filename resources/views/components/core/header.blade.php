@@ -116,7 +116,7 @@
 
                         <li class="dropdown-footer">
                             <a href="{{ route('administrator.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="mdi mdi-logout"></i> {{ __('Log Out') }} </a>
-                            {!! Form::open(['url' => route('logout'), 'method' => 'POST', 'id' => 'logout-form', 'class' => 'd-none']) !!} {!! Form::close() !!}
+                            {!! Form::open(['url' => route('administrator.logout'), 'method' => 'POST', 'id' => 'logout-form', 'class' => 'd-none']) !!} {!! Form::close() !!}
                         </li>
                     </ul>
                 </li>

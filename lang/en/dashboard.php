@@ -19,11 +19,13 @@ return [
         'submenus' => [
             'name' => [
                 'user' => 'User Admin',
+                'student' => 'Students',
                 'role-permissions' => 'Role & Permissions',
                 'profile' => 'Update Profile'
             ],
             'description' => [
                 'user' => 'Menu for list of admins registered on the application',
+                'student' => 'Menu for list of students registered on the application',
                 'role-permissions' => 'Menu for master roles list',
                 'profile' => 'Access permission to update profile'
             ],
@@ -31,18 +33,22 @@ return [
                'title' => [
                     'create' => [
                         'admin' => 'Create Admin',
+                        'student' => 'Create Student',
                         'role' => 'Create Role'
                     ],
                     'edit' => [
                         'admin' => 'Update Admin',
+                        'student' => 'Update Student',
                         'role' => 'Update Role'
                     ],
                     'show' => [
                         'admin' => 'Detail Admin',
+                        'student' => 'Detail Student',
                         'role' => 'Detail Role'
                     ],
                     'delete' => [
                         'admin' => 'Delete Admin',
+                        'student' => 'Delete Student',
                         'role' => 'Delete Role'
                     ],
 
@@ -55,18 +61,22 @@ return [
                 'description' => [
                     'create' => [
                         'admin' => 'Access permission to create admin account',
+                        'student' => 'Access permission to create student account',
                         'role' => 'Access permission to create new role',
                     ],
                     'edit' => [
                         'admin' => 'Access permission to update admin account',
+                        'student' => 'Access permission to update student account',
                         'role' => 'Access permission to update role',
                     ],
                     'show' => [
                         'admin' => 'Access permission to view details admin account',
+                        'student' => 'Access permission to view details student account',
                         'role' => 'Access permission to view details role',
                     ],
                     'delete' => [
                         'admin' => 'Access permission to delete admin account',
+                        'student' => 'Access permission to delete student account',
                         'role' => 'Access permission to delete role',
                     ],
 
@@ -85,6 +95,7 @@ return [
     'content' => [
         'title' => [
             'user' => 'List of User',
+            'student' => 'List of Student',
             'role' => 'List of Role',
 
             'create' => [

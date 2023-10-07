@@ -16,6 +16,7 @@ class LarapatternAuth
      * @return mixed
      */
     public function handle(Request $request, Closure $next)  {
+        dd('test');
         if (Auth::guard(config('larapattern.auth.guard', 'web'))->guest()) {
             return redirect()->route('administrator.login');
         }

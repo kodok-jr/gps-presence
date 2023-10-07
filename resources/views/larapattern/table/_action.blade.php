@@ -1,13 +1,13 @@
 @if (isset($edit))
-    {{-- @can($edit['gate']) --}}
+    @can($edit['gate'])
         <a href="{{ $edit['url'] }}" class="btn btn-link btn-link-custom"><i class="mdi mdi-square-edit-outline"></i></a>
-    {{-- @endcan --}}
+    @endcan
 @endif
 
 @if (isset($destroy))
-    {{-- @can($destroy['gate']) --}}
+    @can($destroy['gate'])
         <a href="{{ $destroy['url'] }}" class="btn btn-link btn-link-custom text-danger" data-toggle="modal" data-target="#{{ Str::slug($destroy['url']) }}"><i class="mdi mdi-trash-can-outline"></i></a>
-    {{-- @endcan --}}
+    @endcan
 
     <div class="modal fade" id="{{ Str::slug($destroy['url']) }}" tabindex="-1" role="dialog" aria-labelledby="{{ Str::slug($destroy['url']) }}" aria-modal="true" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -40,7 +40,7 @@
 @endif
 
 @if (isset($show))
-    {{-- @can($show['gate']) --}}
+    @can($show['gate'])
         <a href="{{ $show['url'] }}" class="btn btn-link pl-0 text-info"><i class="mdi mdi-account-key btn-link-custom" style="vertical-align: middle"></i> {{ $show['name'] }}</a>
-    {{-- @endcan --}}
+    @endcan
 @endif
