@@ -9,7 +9,7 @@
         <div class="col-12">
             <div class="card card-default">
                 <div class="card-header card-header-border-bottom d-flex justify-content-between">
-                    <h2>Presences Monitoring</h2>
+                    <h2>Daily Monitoring Presences</h2>
 
                     {{-- <a href="https://datatables.net/examples/styling/display.html" target="_blank" class="btn btn-outline-primary btn-sm text-uppercase">
                         <i class=" mdi mdi-link mr-1"></i> Docs
@@ -30,29 +30,38 @@
                                     <th>Time Out</th>
                                     <th class="text-center">Photo Out</th>
                                     <th class="text-right">Annotation</th>
+                                    <th class="text-center">Location</th>
                                 </tr>
                             </thead>
 
-                            <tbody id="load_presences">
-                                {{-- @foreach ($model as $item)
-                                    <tr>
-                                        <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td>{{ $item->user->number_id }}</td>
-                                        <td>{{ $item->user->name }}</td>
-                                        <td>{{ $item->time_in }}</td>
-                                        <td class="text-center">{!! '<img src="'.asset('storage/presences/'.$item->photo_in).'" class="rounded-circle" width="50" style="border-radius: 12% !important;" />' !!}</td>
-                                        <td>{{ $item->time_out }}</td>
-                                        <td class="text-center">{!! (!is_null($item->photo_out)) ? '<img src="'.asset('storage/presences/'.$item->photo_out).'" class="rounded-circle" width="50" style="border-radius: 12% !important;" />' : '<i class="mdi mdi-camera-off" style="font-size: large; background-color: beige; padding: 5px;"></i>' !!}</td>
-                                        <td class="text-right">{!! ($item->time_in >= "07:00") ? '<span class="badge badge-danger">Terlambat</span>' : '<span class="badge badge-success">Tepat Waktu</span>' !!}</td>
-                                    </tr>
-                                @endforeach --}}
-
-                            </tbody>
+                            <tbody id="load_presences"></tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+<!-- Large Modal -->
+<div class="modal fade" id="show_map" tabindex="-1" role="dialog" aria-labelledby="exampleModalLarge" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLarge">User Location</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="loadmap">
+
+            </div>
+            {{-- <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+            </div> --}}
+        </div>
+    </div>
+</div>
 
 </x-larapattern-layout>

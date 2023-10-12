@@ -68,7 +68,9 @@ class PresencesMonitoringController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['map'] = $this->repository->findOrFailByUuid($id);
+
+        return view('admin.monitoring._partials.show_map', $data);
     }
 
     /**
