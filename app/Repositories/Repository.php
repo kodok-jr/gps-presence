@@ -16,13 +16,23 @@ abstract class Repository
         $this->model = $model;
     }
 
-    public function getModel()
-    {
+    public function original () {
+        $this->model;
+    }
+
+    public function getModel () {
         return $this->model;
     }
 
-    public function findOrFailByUuid($uuid)
-    {
+    public function findByUuid ($uuid) {
+        return $this->model->whereUuid($uuid)->first();
+    }
+
+    public function findOrFailByUuid ($uuid) {
         return $this->model->whereUuid($uuid)->firstOrFail();
+    }
+
+    public function findByMake ($id) {
+        return $this->model->where('parent_id', $id)->get();
     }
 }

@@ -1,14 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Administrator\UserManagement\Accounts;
+namespace App\Http\Controllers\Administrator;
 
-use App\DataTables\MemberDataTables;
+use App\DataTables\PresencesMonitoringDataTables;
 use App\Http\Controllers\Controller;
+use App\Models\Presence;
+use App\Repositories\PresencesMonitoringRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
 
-class MemberController extends Controller
+class PresencesMonitoringController extends Controller
 {
+    protected $repository;
+
+    public function __construct (PresencesMonitoringRepository $repository) {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,14 +23,16 @@ class MemberController extends Controller
      */
     public function index()
     {
-        larapattern()->allow('administrator.management.accounts.student.index');
-        // $user = auth()->guard('admin')->user();
+        larapattern()->allow('administrator.monitoring.index');
 
-        // if (!Gate::forUser($user)->allows('administrator.management.accounts.student.index')) { abort(403); }
+        // return PresencesMonitoringDataTables::view('larapattern.index', [
+        //     'foo' => 'bar',
+        //     'get_date' => request()->date
+        // ]);
 
-        return MemberDataTables::view('larapattern.index', [
-            'foo' => 'bar'
-        ]);
+        $presences_monitoring = Presence::with('user')->get();
+
+        return view('admin.monitoring.index', ['model' => $presences_monitoring]);
     }
 
     /**
@@ -44,7 +53,11 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $get_date = $request->date;
+
+        $presences_monitoring = Presence::with('user')->where('presence_date', $get_date)->get();
+
+        return view('admin.monitoring._partials.get_presences', ['model' => $presences_monitoring]);
     }
 
     /**

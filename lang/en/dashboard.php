@@ -8,11 +8,13 @@ return [
         'menus' => [
             'name' => [
                 'user-management' => 'User Management',
-                'profile' => 'My Profile'
+                'profile' => 'My Profile',
+                'monitoring' => 'Monitoring'
             ],
             'description' => [
                 'user-management' => 'Menu for account management list',
-                'profile' => 'Menu for update user profile logged in'
+                'profile' => 'Menu for update user profile logged in',
+                'monitoring' => 'Menu for presences monitoring'
             ]
         ],
 
@@ -34,7 +36,8 @@ return [
                     'create' => [
                         'admin' => 'Create Admin',
                         'student' => 'Create Student',
-                        'role' => 'Create Role'
+                        'role' => 'Create Role',
+                        'monitoring' => 'Create Presences Monitoring'
                     ],
                     'edit' => [
                         'admin' => 'Update Admin',
@@ -63,6 +66,7 @@ return [
                         'admin' => 'Access permission to create admin account',
                         'student' => 'Access permission to create student account',
                         'role' => 'Access permission to create new role',
+                        'monitoring' => 'Access permission to create presences monitoring',
                     ],
                     'edit' => [
                         'admin' => 'Access permission to update admin account',

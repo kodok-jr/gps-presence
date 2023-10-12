@@ -19,3 +19,9 @@ if (!function_exists('component_form')) {
         return config('larapattern.components.core').".".$blade;
     }
 }
+
+if(! function_exists('component_custom_datatables')) {
+  function component_admin_path($blade) {
+    return config('template.component.custom_datatables') . "." . $blade;
+  }
+}

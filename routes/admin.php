@@ -37,6 +37,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Administrator'], function () 
             });
         });
 
+        Route::resource('monitoring', App\Http\Controllers\Administrator\PresencesMonitoringController::class);
     });
 
 });

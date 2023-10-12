@@ -6,11 +6,13 @@ return [
         'menus' => [
             'name' => [
                 'user-management' => 'Tata Pengguna',
-                'profile' => 'Profil'
+                'profile' => 'Profil',
+                'monitoring' => 'Monitoring Presensi'
             ],
             'description' => [
                 'user-management' => 'Menu untuk daftar manajemen pengguna',
-                'profile' => 'Menu untuk memperbaharui profil pengguna yang telah masuk'
+                'profile' => 'Menu untuk memperbaharui profil pengguna yang telah masuk',
+                'monitoring' => 'Menu untuk monitoring presensi'
             ]
         ],
 
@@ -29,7 +31,8 @@ return [
                 'title' => [
                     'create' => [
                         'admin' => 'Buat Admin Baru',
-                        'role' => 'Buat Level Baru'
+                        'role' => 'Buat Level Baru',
+                        'monitoring' => 'Cetak Presensi'
                     ],
                     'edit' => [
                         'admin' => 'Perbaharui Admin',
@@ -54,6 +57,7 @@ return [
                     'create' => [
                         'admin' => 'Izin akses untuk membuat akun admin baru',
                         'role' => 'Izin akses untuk membuat level/ peran admin baru',
+                        'monitoring' => 'Izin akses untu mencetak monitoring presensi',
                     ],
                     'edit' => [
                         'admin' => 'Izin akses untuk memperbaharui akun admin',

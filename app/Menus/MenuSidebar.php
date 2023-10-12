@@ -139,4 +139,43 @@
                 ],
             ],
         ],
+
+
+        /*
+        | Presences Monitoring
+        |--------------------------------------------------------------------------
+        */
+        [
+            'gate' => 'administrator.monitoring.index',
+            'name' => __('dashboard.sidebar.menus.name.monitoring'),
+            'description' => __('dashboard.sidebar.submenus.description.monitoring'),
+            'route' => ['administrator.monitoring.index', []],
+            'active_url' => 'administrator/monitoring*',
+            'is_active' => 'management/monitoring*',
+            'icon' => 'mdi mdi-desktop-mac-dashboard',
+            'id' => '',
+            'permissions' => [
+                [
+                    'gate' => 'administrator.monitoring.create',
+                    'title' => __('dashboard.sidebar.submenus.permissions.title.create.monitoring'),
+                    'description' => __('dashboard.sidebar.submenus.permissions.description.create.monitoring')
+                ],
+                // [
+                //     'gate' => 'administrator.management.accounts.admin.update',
+                //     'title' => __('dashboard.sidebar.submenus.permissions.title.edit.admin'),
+                //     'description' => __('dashboard.sidebar.submenus.permissions.description.edit.admin')
+                // ],
+                // [
+                //     'gate' => 'administrator.management.accounts.admin.show',
+                //     'title' => __('dashboard.sidebar.submenus.permissions.title.show.admin'),
+                //     'description' => __('dashboard.sidebar.submenus.permissions.description.show.admin')
+                // ],
+                // [
+                //     'gate' => 'administrator.management.accounts.admin.destroy',
+                //     'title' => __('dashboard.sidebar.submenus.permissions.title.delete.admin'),
+                //     'description' => __('dashboard.sidebar.submenus.permissions.description.delete.admin')
+                // ]
+            ],
+            // 'submenus' => []
+        ],
     ];
