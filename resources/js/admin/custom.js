@@ -88,6 +88,16 @@ $(function () {
         allowClear: true
     });
 
+    $('.custom-select2').select2({
+        placeholder: 'Select options...',
+        allowClear: true
+    });
+
+    $('.custom-select2-user').select2({
+        placeholder: 'Choose student...',
+        allowClear: true
+    });
+
     /** onkeyup slug role name */
     $('.role-slug').on('keyup', function () {
         var slug = $(this).val();

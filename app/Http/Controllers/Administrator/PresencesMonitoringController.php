@@ -53,6 +53,8 @@ class PresencesMonitoringController extends Controller
      */
     public function store(Request $request)
     {
+        larapattern()->allow('administrator.monitoring.create');
+
         $get_date = $request->date;
 
         $presences_monitoring = Presence::with('user')->where('presence_date', $get_date)->get();
@@ -68,6 +70,8 @@ class PresencesMonitoringController extends Controller
      */
     public function show($id)
     {
+        larapattern()->allow('administrator.monitoring.index');
+
         $data['map'] = $this->repository->findOrFailByUuid($id);
 
         return view('admin.monitoring._partials.show_map', $data);

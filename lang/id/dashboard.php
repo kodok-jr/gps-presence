@@ -7,12 +7,15 @@ return [
             'name' => [
                 'user-management' => 'Tata Pengguna',
                 'profile' => 'Profil',
-                'monitoring' => 'Monitoring Presensi'
+                'monitoring' => 'Monitoring Presensi',
+                'profile' => 'Profil',
+                'reports' => 'Laporan'
             ],
             'description' => [
                 'user-management' => 'Menu untuk daftar manajemen pengguna',
                 'profile' => 'Menu untuk memperbaharui profil pengguna yang telah masuk',
-                'monitoring' => 'Menu untuk monitoring presensi'
+                'monitoring' => 'Menu untuk monitoring presensi',
+                'reports' => 'Menu untuk mencetak laporan'
             ]
         ],
 
@@ -20,7 +23,11 @@ return [
             'name' => [
                 'user' => 'Akun Admin',
                 'role-permissions' => 'Izin Akses Pengguna',
-                'profile' => 'Perbaharui Profil'
+                'profile' => 'Perbaharui Profil',
+                'reports' => [
+                    'presence' => 'Presensi',
+                    'recap-presence' => 'Rekap Presensi'
+                ]
             ],
             'description' => [
                 'user' => 'Menu untuk daftar akun admin yang telah terdaftar pada aplikasi',

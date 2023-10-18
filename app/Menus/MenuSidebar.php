@@ -140,7 +140,6 @@
             ],
         ],
 
-
         /*
         | Presences Monitoring
         |--------------------------------------------------------------------------
@@ -177,5 +176,65 @@
                 // ]
             ],
             // 'submenus' => []
+        ],
+
+        /*
+        |--------------------------------------------------------------------------
+        | Reports
+        |--------------------------------------------------------------------------
+        */
+        [
+            'gate' => 'administrator.reports',
+            'name' => __('dashboard.sidebar.menus.name.reports'),
+            'description' => __('dashboard.sidebar.menus.description.reports'),
+            'route' => null,
+            'active_url' => 'administrator/reports*',
+            'is_active' => null,
+            'icon' => 'mdi mdi-cloud-print-outline',
+            'id' => '',
+            'permissions' => [],
+            'submenus' => [
+                /*
+                | Presences
+                |--------------------------------------------------------------------------
+                */
+                [
+                    'gate' => 'administrator.reports.presence.index',
+                    'name' => __('dashboard.sidebar.submenus.name.reports.presence'),
+                    'description' => __('dashboard.sidebar.submenus.description.reports.presence'),
+                    'route' => ['administrator.reports.presence.index', []],
+                    'active_url' => 'administrator/reports/presence*',
+                    'is_active' => 'reports/presence*',
+                    'id' => '',
+                    'permissions' => [
+                        [
+                            'gate' => 'administrator.reports.presence.create',
+                            'title' => __('dashboard.sidebar.submenus.permissions.title.create.reports.presence'),
+                            'description' => __('dashboard.sidebar.submenus.permissions.description.create.reports.presence')
+                        ],
+                    ],
+                ],
+
+                /*
+                | Recap Presences
+                |--------------------------------------------------------------------------
+                */
+                [
+                    'gate' => 'administrator.reports.recap-presence.index',
+                    'name' => __('dashboard.sidebar.submenus.name.reports.recap-presence'),
+                    'description' => __('dashboard.sidebar.submenus.description.reports.recap-presence'),
+                    'route' => ['administrator.reports.recap-presence.index', []],
+                    'active_url' => 'administrator/reports/recap-presence*',
+                    'is_active' => 'reports/recap-presence*',
+                    'id' => '',
+                    'permissions' => [
+                        [
+                            'gate' => 'administrator.reports.recap-presence.create',
+                            'title' => __('dashboard.sidebar.submenus.permissions.title.create.reports.recap-presence'),
+                            'description' => __('dashboard.sidebar.submenus.permissions.description.create.reports.recap-presence')
+                        ],
+                    ],
+                ],
+            ],
         ],
     ];

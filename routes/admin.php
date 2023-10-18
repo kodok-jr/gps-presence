@@ -38,6 +38,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Administrator'], function () 
         });
 
         Route::resource('monitoring', App\Http\Controllers\Administrator\PresencesMonitoringController::class);
+
+        Route::group(['prefix' => 'reports', 'as' => 'reports.'], function () {
+            Route::resource('presence', App\Http\Controllers\Administrator\Reports\PresenceController::class);
+            Route::resource('recap-presence', App\Http\Controllers\Administrator\Reports\RecapPresenceController::class);
+        });
     });
 
 });

@@ -9,12 +9,14 @@ return [
             'name' => [
                 'user-management' => 'User Management',
                 'profile' => 'My Profile',
-                'monitoring' => 'Monitoring'
+                'monitoring' => 'Monitoring',
+                'reports' => 'Reports'
             ],
             'description' => [
                 'user-management' => 'Menu for account management list',
                 'profile' => 'Menu for update user profile logged in',
-                'monitoring' => 'Menu for presences monitoring'
+                'monitoring' => 'Menu for presences monitoring',
+                'reports' => 'Menu for print any reporting'
             ]
         ],
 
@@ -23,7 +25,11 @@ return [
                 'user' => 'Admin',
                 'student' => 'Student',
                 'role-permissions' => 'Role & Permissions',
-                'profile' => 'Update Profile'
+                'profile' => 'Update Profile',
+                'reports' => [
+                    'presence' => 'Presences',
+                    'recap-presence' => 'Recap Presences'
+                ]
             ],
             'description' => [
                 'user' => 'Menu for list of admins registered on the application',
