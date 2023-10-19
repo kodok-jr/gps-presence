@@ -10,7 +10,8 @@ return [
                 'user-management' => 'User Management',
                 'profile' => 'My Profile',
                 'monitoring' => 'Monitoring',
-                'reports' => 'Reports'
+                'reports' => 'Reports',
+                'settings' => 'Settings'
             ],
             'description' => [
                 'user-management' => 'Menu for account management list',

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Presence;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -45,7 +46,9 @@ class PresenceController extends Controller
             return redirect()->route('home');
         }
 
-        return view('web.presences.create', compact('check', 'presence_id', 'presence_today'));
+        $setting = Setting::first();
+
+        return view('web.presences.create', compact('check', 'presence_id', 'presence_today', 'setting'));
     }
 
     /**
@@ -61,34 +64,56 @@ class PresenceController extends Controller
         $location = $request->location;
         $image = $request->image;
 
-        $presence_date = date("Y-m-d");
-        $time_in = date("H:i:s");
-        $folder_path = "public/presences/";
-        $format_filename = auth()->user()->uuid."-".$presence_date."-in";
+        /** Explode office location */
+        $setting = Setting::first();
+        $base_location = explode(",", $setting->base_location);
+        $office_latitude = $base_location[0];
+        $office_longitude = $base_location[1];
 
-        $convert_image = explode(";base64", $image);
-        $file_image = base64_decode($convert_image[1]);
-        $filename = $format_filename.".png";
-        $file = $folder_path.$filename;
+         /** Explode user location */
+        $user_location_ex = explode(",", $location);
+        $user_latitude = $user_location_ex[0];
+        $user_longitude = $user_location_ex[1];
 
-        $data = [
-            'number_id' => $user_number_id,
-            'user_id' => $user_id,
-            'presence_date' => $presence_date,
-            'time_in' => $time_in,
-            'photo_in' => $filename,
-            'location_in' => $location,
-        ];
+        $length = $this->distance($office_latitude, $office_longitude, $user_latitude, $user_longitude);
 
-        $save = Presence::create($data);
+        /** Distance position in radius */
+        $radius = round($length['meters']);
 
-        if ($save) {
-            Storage::put($file, $file_image);
-            echo "success|Terimakasih, Sudah melakukan absen masuk|in";
+
+
+        /** Validation radius */
+        if ($radius > $setting->radius) {
+            echo "error|Maaf, Anda diluar jangkauan radius, jarak Anda ".$radius.".Meter dari Kampus|radius";
         } else {
-            echo "error|Maaf Gagal Absen, Silahkan Hubungi Tim IT|in";
-        }
+            $presence_date = date("Y-m-d");
+            $time_in = date("H:i:s");
+            $folder_path = "public/presences/";
+            $format_filename = auth()->user()->uuid."-".$presence_date."-in";
 
+            $convert_image = explode(";base64", $image);
+            $file_image = base64_decode($convert_image[1]);
+            $filename = $format_filename.".png";
+            $file = $folder_path.$filename;
+
+            $data = [
+                'number_id' => $user_number_id,
+                'user_id' => $user_id,
+                'presence_date' => $presence_date,
+                'time_in' => $time_in,
+                'photo_in' => $filename,
+                'location_in' => $location,
+            ];
+
+            $save = Presence::create($data);
+
+            if ($save) {
+                Storage::put($file, $file_image);
+                echo "success|Terimakasih, Sudah melakukan absen masuk|in";
+            } else {
+                echo "error|Maaf Gagal Absen, Silahkan Hubungi Tim IT|in";
+            }
+        }
     }
 
     /**
@@ -126,10 +151,10 @@ class PresenceController extends Controller
         $image = $request->image;
 
         /** Explode office location */
-        // $office_location = "-6.913773657106793, 107.82183640323136";
-        // $office_location_ex = explode(",", $location);
-        $office_latitude = -6.914253916561905;
-        $office_longitude = 107.82169067417507;
+        $setting = Setting::first();
+        $base_location = explode(",", $setting->base_location);
+        $office_latitude = $base_location[0];
+        $office_longitude = $base_location[1];
 
         /** Explode user location */
         $user_location_ex = explode(",", $location);
@@ -142,7 +167,7 @@ class PresenceController extends Controller
         $radius = round($length['meters']);
 
         /** Validation radius */
-        if ($radius > 100) {
+        if ($radius > $setting->radius) {
             echo "error|Maaf, Anda diluar jangkauan radius, jarak Anda ".$radius.".Meter dari Kampus|radius";
         } else {
             $presence = Presence::findOrFail($id);

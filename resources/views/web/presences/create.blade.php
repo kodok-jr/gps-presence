@@ -155,6 +155,15 @@
             /** user position */
             current_location.value = params.coords.latitude +","+ params.coords.longitude;
 
+            /** base location */
+            var base_location = "{{ $setting->base_location }}";
+            var explode_location = base_location.split(",");
+            var base_latitude = explode_location[0];
+            var base_longitude = explode_location[1];
+
+            /** base radius */
+            var base_radius = "{{ $setting->radius }}";
+
             /** set coordinate current user position to map */
             var map = L.map('map').setView([params.coords.latitude, params.coords.longitude], 16);  // change zoom map
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -166,11 +175,11 @@
             var marker = L.marker([params.coords.latitude, params.coords.longitude]).addTo(map);
 
             /** radius location */
-            var circle = L.circle([-6.914253916561905, 107.82169067417507], {
+            var circle = L.circle([base_latitude, base_longitude], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
-                radius: 100 // set radius
+                radius: base_radius // set radius
             }).addTo(map);
         }
 

@@ -24,6 +24,10 @@ abstract class Repository
         return $this->model;
     }
 
+    public function getModelFirst () {
+        return $this->model->first();
+    }
+
     public function findByUuid ($uuid) {
         return $this->model->whereUuid($uuid)->first();
     }

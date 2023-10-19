@@ -237,4 +237,27 @@
                 ],
             ],
         ],
+
+
+        /*
+        | Settings
+        |--------------------------------------------------------------------------
+        */
+        [
+            'gate' => 'administrator.settings.index',
+            'name' => __('dashboard.sidebar.menus.name.settings'),
+            'description' => __('dashboard.sidebar.submenus.description.settings'),
+            'route' => ['administrator.settings.index', []],
+            'active_url' => 'administrator/settings*',
+            'is_active' => 'management/settings*',
+            'icon' => 'mdi mdi-settings',
+            'id' => '',
+            'permissions' => [
+                [
+                    'gate' => 'administrator.settings.update',
+                    'title' => __('dashboard.sidebar.submenus.permissions.title.edit.settings'),
+                    'description' => __('dashboard.sidebar.submenus.permissions.description.edit.settings')
+                ],
+            ],
+        ],
     ];

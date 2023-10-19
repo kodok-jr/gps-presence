@@ -9,7 +9,8 @@ return [
                 'profile' => 'Profil',
                 'monitoring' => 'Monitoring Presensi',
                 'profile' => 'Profil',
-                'reports' => 'Laporan'
+                'reports' => 'Laporan',
+                'settings' => 'Konfigurasi'
             ],
             'description' => [
                 'user-management' => 'Menu untuk daftar manajemen pengguna',

@@ -43,6 +43,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Administrator'], function () 
             Route::resource('presence', App\Http\Controllers\Administrator\Reports\PresenceController::class);
             Route::resource('recap-presence', App\Http\Controllers\Administrator\Reports\RecapPresenceController::class);
         });
+
+        Route::resource('settings', App\Http\Controllers\Administrator\SettingController::class);
     });
 
 });
