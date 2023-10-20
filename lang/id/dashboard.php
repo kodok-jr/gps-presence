@@ -10,13 +10,15 @@ return [
                 'monitoring' => 'Monitoring Presensi',
                 'profile' => 'Profil',
                 'reports' => 'Laporan',
-                'settings' => 'Konfigurasi'
+                'settings' => 'Konfigurasi',
+                'approvals' => 'Persetujuan'
             ],
             'description' => [
                 'user-management' => 'Menu untuk daftar manajemen pengguna',
                 'profile' => 'Menu untuk memperbaharui profil pengguna yang telah masuk',
                 'monitoring' => 'Menu untuk monitoring presensi',
-                'reports' => 'Menu untuk mencetak laporan'
+                'reports' => 'Menu untuk mencetak laporan',
+                'approvals' => 'Menu untuk persetujuan Izin/ Sakit'
             ]
         ],
 
@@ -44,7 +46,8 @@ return [
                     ],
                     'edit' => [
                         'admin' => 'Perbaharui Admin',
-                        'role' => 'Perbaharui Level'
+                        'role' => 'Perbaharui Level',
+                        'approvals' => 'Persetujuan Izin/ Sakit'
                     ],
                     'show' => [
                         'admin' => 'Detail Admin',
@@ -70,6 +73,7 @@ return [
                     'edit' => [
                         'admin' => 'Izin akses untuk memperbaharui akun admin',
                         'role' => 'Izin akses untuk memperbaharui level/ peran admin',
+                        'approvals' => 'Izin akses untuk persetujuan Izin/ Sakit'
                     ],
                     'show' => [
                         'admin' => 'Izin akses untuk melihat detail informasi akun admin',

@@ -11,13 +11,15 @@ return [
                 'profile' => 'My Profile',
                 'monitoring' => 'Monitoring',
                 'reports' => 'Reports',
-                'settings' => 'Settings'
+                'settings' => 'Settings',
+                'approvals' => 'Persetujuan'
             ],
             'description' => [
                 'user-management' => 'Menu for account management list',
                 'profile' => 'Menu for update user profile logged in',
                 'monitoring' => 'Menu for presences monitoring',
-                'reports' => 'Menu for print any reporting'
+                'reports' => 'Menu for print any reporting',
+                'approvals' => 'Menu for approval absences'
             ]
         ],
 
@@ -49,7 +51,8 @@ return [
                     'edit' => [
                         'admin' => 'Update Admin',
                         'student' => 'Update Student',
-                        'role' => 'Update Role'
+                        'role' => 'Update Role',
+                        'approvals' => 'Approval Absences'
                     ],
                     'show' => [
                         'admin' => 'Detail Admin',
@@ -79,6 +82,7 @@ return [
                         'admin' => 'Access permission to update admin account',
                         'student' => 'Access permission to update student account',
                         'role' => 'Access permission to update role',
+                        'approvals' => 'Access permission to approval absences'
                     ],
                     'show' => [
                         'admin' => 'Access permission to view details admin account',

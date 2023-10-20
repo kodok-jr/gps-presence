@@ -37,6 +37,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Administrator'], function () 
             });
         });
 
+        Route::resource('approvals', App\Http\Controllers\Administrator\ApprovalController::class);
         Route::resource('monitoring', App\Http\Controllers\Administrator\PresencesMonitoringController::class);
 
         Route::group(['prefix' => 'reports', 'as' => 'reports.'], function () {

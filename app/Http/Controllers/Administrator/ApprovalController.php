@@ -1,14 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Administrator\UserManagement\Accounts;
+namespace App\Http\Controllers\Administrator;
 
-use App\DataTables\UserDataTables;
+use App\DataTables\ApprovalDataTables;
 use App\Http\Controllers\Controller;
+use App\Repositories\AbsenceRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
 
-class AdminController extends Controller
+class ApprovalController extends Controller
 {
+    protected $repository;
+
+    public function __construct(AbsenceRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +23,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        larapattern()->allow('administrator.management.accounts.admin.index');
+        larapattern()->allow('administrator.approvals.index');
 
-        return UserDataTables::view('larapattern.index', [
+        return ApprovalDataTables::view('larapattern.index', [
             'foo' => 'bar'
         ]);
     }
@@ -75,7 +82,9 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        larapattern()->allow('administrator.approvals.update');
+
+        return $this->repository->updateApproval($request, $id);
     }
 
     /**

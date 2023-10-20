@@ -22,6 +22,50 @@ class Absence extends Model
         'state', 'type'
     ];
 
+    /** Absences statuses */
+    protected $states = ['pending', 'approved', 'rejected'];
+
+    /**
+     * attributes parameter users button status
+     */
+    public $stateButton = [
+        'Pending' => [
+            [
+                'status' => 'approved',
+                'text-permission' => 'approve',
+                'text-button' => 'Approve',
+                'text-title' => 'Approval',
+                'color' => 'success'
+            ],
+            [
+                'status' => 'rejected',
+                'text-permission' => 'reject',
+                'text-button' => 'Reject',
+                'text-title' => 'Rejection',
+                'color' => 'danger'
+            ],
+        ],
+        'Approved' => [
+            [
+                'status' => 'banned',
+                'text-permission' => 'banned',
+                'text-button' => 'Ban',
+                'text-title' => 'Banned',
+                'color' => 'danger'
+            ],
+        ],
+        'Rejected' => [],
+    ];
+
+    /**
+     * attributes color status (for css class)
+     */
+    public $statusColor = [
+        'Pending' => 'secondary',
+        'Approved' => 'success',
+        'Rejected' => 'danger',
+    ];
+
     /**
      * Get the user that owns the Presence
      *

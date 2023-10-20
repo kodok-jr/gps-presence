@@ -2,6 +2,111 @@
 
     return [
         /*
+        | Presences Monitoring
+        |--------------------------------------------------------------------------
+        */
+        [
+            'gate' => 'administrator.monitoring.index',
+            'name' => __('dashboard.sidebar.menus.name.monitoring'),
+            'description' => __('dashboard.sidebar.submenus.description.monitoring'),
+            'route' => ['administrator.monitoring.index', []],
+            'active_url' => 'administrator/monitoring*',
+            'is_active' => 'management/monitoring*',
+            'icon' => 'mdi mdi-desktop-mac-dashboard',
+            'id' => '',
+            'permissions' => [
+                [
+                    'gate' => 'administrator.monitoring.create',
+                    'title' => __('dashboard.sidebar.submenus.permissions.title.create.monitoring'),
+                    'description' => __('dashboard.sidebar.submenus.permissions.description.create.monitoring')
+                ],
+            ],
+            // 'submenus' => []
+        ],
+
+        /*
+        | Approval
+        |--------------------------------------------------------------------------
+        */
+        [
+            'gate' => 'administrator.approvals.index',
+            'name' => __('dashboard.sidebar.menus.name.approvals'),
+            'description' => __('dashboard.sidebar.submenus.description.approvals'),
+            'route' => ['administrator.approvals.index', []],
+            'active_url' => 'administrator/approvals*',
+            'is_active' => 'management/approvals*',
+            'icon' => 'mdi mdi-fingerprint',
+            'id' => '',
+            'permissions' => [
+                [
+                    'gate' => 'administrator.approvals.update',
+                    'title' => __('dashboard.sidebar.submenus.permissions.title.edit.approvals'),
+                    'description' => __('dashboard.sidebar.submenus.permissions.description.edit.approvals')
+                ],
+            ],
+        ],
+
+        /*
+        |--------------------------------------------------------------------------
+        | Reports
+        |--------------------------------------------------------------------------
+        */
+        [
+            'gate' => 'administrator.reports',
+            'name' => __('dashboard.sidebar.menus.name.reports'),
+            'description' => __('dashboard.sidebar.menus.description.reports'),
+            'route' => null,
+            'active_url' => 'administrator/reports*',
+            'is_active' => null,
+            'icon' => 'mdi mdi-cloud-print-outline',
+            'id' => '',
+            'permissions' => [],
+            'submenus' => [
+                /*
+                | Presences
+                |--------------------------------------------------------------------------
+                */
+                [
+                    'gate' => 'administrator.reports.presence.index',
+                    'name' => __('dashboard.sidebar.submenus.name.reports.presence'),
+                    'description' => __('dashboard.sidebar.submenus.description.reports.presence'),
+                    'route' => ['administrator.reports.presence.index', []],
+                    'active_url' => 'administrator/reports/presence*',
+                    'is_active' => 'reports/presence*',
+                    'id' => '',
+                    'permissions' => [
+                        [
+                            'gate' => 'administrator.reports.presence.create',
+                            'title' => __('dashboard.sidebar.submenus.permissions.title.create.reports.presence'),
+                            'description' => __('dashboard.sidebar.submenus.permissions.description.create.reports.presence')
+                        ],
+                    ],
+                ],
+
+                /*
+                | Recap Presences
+                |--------------------------------------------------------------------------
+                */
+                [
+                    'gate' => 'administrator.reports.recap-presence.index',
+                    'name' => __('dashboard.sidebar.submenus.name.reports.recap-presence'),
+                    'description' => __('dashboard.sidebar.submenus.description.reports.recap-presence'),
+                    'route' => ['administrator.reports.recap-presence.index', []],
+                    'active_url' => 'administrator/reports/recap-presence*',
+                    'is_active' => 'reports/recap-presence*',
+                    'id' => '',
+                    'permissions' => [
+                        [
+                            'gate' => 'administrator.reports.recap-presence.create',
+                            'title' => __('dashboard.sidebar.submenus.permissions.title.create.reports.recap-presence'),
+                            'description' => __('dashboard.sidebar.submenus.permissions.description.create.reports.recap-presence')
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
+        /*
         |--------------------------------------------------------------------------
         | Users Management
         |--------------------------------------------------------------------------
@@ -134,104 +239,6 @@
                             'gate' => 'administrator.management.access.permission.assign',
                             'title' => __('dashboard.sidebar.submenus.permissions.title.permission.assign'),
                             'description' => __('dashboard.sidebar.submenus.permissions.description.permission.assign')
-                        ],
-                    ],
-                ],
-            ],
-        ],
-
-        /*
-        | Presences Monitoring
-        |--------------------------------------------------------------------------
-        */
-        [
-            'gate' => 'administrator.monitoring.index',
-            'name' => __('dashboard.sidebar.menus.name.monitoring'),
-            'description' => __('dashboard.sidebar.submenus.description.monitoring'),
-            'route' => ['administrator.monitoring.index', []],
-            'active_url' => 'administrator/monitoring*',
-            'is_active' => 'management/monitoring*',
-            'icon' => 'mdi mdi-desktop-mac-dashboard',
-            'id' => '',
-            'permissions' => [
-                [
-                    'gate' => 'administrator.monitoring.create',
-                    'title' => __('dashboard.sidebar.submenus.permissions.title.create.monitoring'),
-                    'description' => __('dashboard.sidebar.submenus.permissions.description.create.monitoring')
-                ],
-                // [
-                //     'gate' => 'administrator.management.accounts.admin.update',
-                //     'title' => __('dashboard.sidebar.submenus.permissions.title.edit.admin'),
-                //     'description' => __('dashboard.sidebar.submenus.permissions.description.edit.admin')
-                // ],
-                // [
-                //     'gate' => 'administrator.management.accounts.admin.show',
-                //     'title' => __('dashboard.sidebar.submenus.permissions.title.show.admin'),
-                //     'description' => __('dashboard.sidebar.submenus.permissions.description.show.admin')
-                // ],
-                // [
-                //     'gate' => 'administrator.management.accounts.admin.destroy',
-                //     'title' => __('dashboard.sidebar.submenus.permissions.title.delete.admin'),
-                //     'description' => __('dashboard.sidebar.submenus.permissions.description.delete.admin')
-                // ]
-            ],
-            // 'submenus' => []
-        ],
-
-        /*
-        |--------------------------------------------------------------------------
-        | Reports
-        |--------------------------------------------------------------------------
-        */
-        [
-            'gate' => 'administrator.reports',
-            'name' => __('dashboard.sidebar.menus.name.reports'),
-            'description' => __('dashboard.sidebar.menus.description.reports'),
-            'route' => null,
-            'active_url' => 'administrator/reports*',
-            'is_active' => null,
-            'icon' => 'mdi mdi-cloud-print-outline',
-            'id' => '',
-            'permissions' => [],
-            'submenus' => [
-                /*
-                | Presences
-                |--------------------------------------------------------------------------
-                */
-                [
-                    'gate' => 'administrator.reports.presence.index',
-                    'name' => __('dashboard.sidebar.submenus.name.reports.presence'),
-                    'description' => __('dashboard.sidebar.submenus.description.reports.presence'),
-                    'route' => ['administrator.reports.presence.index', []],
-                    'active_url' => 'administrator/reports/presence*',
-                    'is_active' => 'reports/presence*',
-                    'id' => '',
-                    'permissions' => [
-                        [
-                            'gate' => 'administrator.reports.presence.create',
-                            'title' => __('dashboard.sidebar.submenus.permissions.title.create.reports.presence'),
-                            'description' => __('dashboard.sidebar.submenus.permissions.description.create.reports.presence')
-                        ],
-                    ],
-                ],
-
-                /*
-                | Recap Presences
-                |--------------------------------------------------------------------------
-                */
-                [
-                    'gate' => 'administrator.reports.recap-presence.index',
-                    'name' => __('dashboard.sidebar.submenus.name.reports.recap-presence'),
-                    'description' => __('dashboard.sidebar.submenus.description.reports.recap-presence'),
-                    'route' => ['administrator.reports.recap-presence.index', []],
-                    'active_url' => 'administrator/reports/recap-presence*',
-                    'is_active' => 'reports/recap-presence*',
-                    'id' => '',
-                    'permissions' => [
-                        [
-                            'gate' => 'administrator.reports.recap-presence.create',
-                            'title' => __('dashboard.sidebar.submenus.permissions.title.create.reports.recap-presence'),
-                            'description' => __('dashboard.sidebar.submenus.permissions.description.create.reports.recap-presence')
                         ],
                     ],
                 ],
