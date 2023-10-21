@@ -595,9 +595,10 @@
         </script>
     @endif
 
+    
     @stack('scripts')
-
     <script src="{{ asset('js/web/app.js') }}"></script>
+
 </body>
 
 </html>

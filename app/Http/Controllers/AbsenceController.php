@@ -46,10 +46,17 @@ class AbsenceController extends Controller
      */
     public function store(AbsenceStoreRequest $request)
     {
+        $user_id = auth()->user()->id;
 
         $request->merge([
-            'user_id' => auth()->user()->id
+            'user_id' => $user_id
         ]);
+
+        $check = Absence::where('user_id', $user_id)->where('absence_date', $request->absence_date)->count();
+        
+        if ($check > 0) {
+            return redirect()->route('absences.index')->withErrors(["Sorry, You have submitted your application on that day..!"]);
+        }
 
         $save = Absence::create($request->all());
 

@@ -6,6 +6,8 @@
             z-index: 9999 !important;
         }
     </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css" />
 @endpush
 
 @section('content')
@@ -63,12 +65,16 @@
             </div>
         </div>
         <div class="col-md-6">
-            <button type="button" id="TooltipDemo" class="btn-open-options btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
+            {{-- <button type="button" id="TooltipDemo" class="btn-open-options btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
                 <i class="fa fa-paper-plane fa-w-16 fa-2x"></i>
-            </button>
+            </button> --}}
         </div>
     </div>
 </div>
+
+<button type="button" id="TooltipDemo" class="btn-open-options btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
+    <i class="fa fa-paper-plane fa-w-16 fa-2x"></i>
+</button>
 @endsection
 
 
@@ -149,16 +155,44 @@
 @endif
 
 @push('scripts')
-    <script>
-        // $(document).ready(function () {
-        //     $('#createAbsence').submit(function () {
-        //         var absence_date = $('#absence_date').val();
+    {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 
-        //         if (absence_date == null) {
-        //             console.log(absence_date);
-        //             return false;
-        //         }
-        //     });
-        // });
+    <script>
+        $(document).ready(function(){
+
+            // $('[data-toggle="datepicker"]').on('pick.datepicker', function (e) {
+            //     console.log('gaskins');
+            //     if (e.date < new Date()) {
+            //         e.preventDefault(); // Prevent to pick the date
+            //     }
+            // });
+            // $('#absence_date').change(function() {
+            //     console.log('gaskins');
+            // });
+            // $('[data-toggle="datepicker"]').change(function() {
+            //     console.log('gaskins');
+            // });
+            // $().datepicker('formatDate', new Date(2014, 1, 14));
+            // $( ".target" ).on( "change", function() {
+            //     alert( "Handler for `change` called." );
+            // } );
+        });
+    //     $(document).ready(function () {
+    //         $('#absence_date').change(function (){
+    //             alert('test');
+    //         });
+    //         // $(document).on("change", "#absence_date", function (e) {
+
+    //         //     alert('test');
+
+    //         // });
+    //         // $('.datepicker-panel>ul>li.picked').on('pick.datepicker', function (e) {
+    //         //     alert('gaskins');
+    //         //     // if (e.date < new Date()) {
+    //         //     //     e.preventDefault(); // Prevent to pick the date
+    //         //     // }
+    //         // });
+    //     });
     </script>
 @endpush
