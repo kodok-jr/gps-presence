@@ -4,11 +4,24 @@ namespace App\Http\Controllers\Administrator\UserManagement\Accounts;
 
 use App\DataTables\UserDataTables;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Administrator\UserManagement\Accounts\AdminStoreRequest;
+use App\Http\Requests\Administrator\UserManagement\Accounts\AdminUpdateRequest;
+use App\Repositories\RoleRepository;
+use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Flasher\Toastr\Prime\ToastrFactory;
 
 class AdminController extends Controller
 {
+    protected $repository, $roleRepository;
+
+    public function __construct(UserRepository $repository, RoleRepository $roleRepository)
+    {
+        $this->repository = $repository;
+        $this->roleRepository = $roleRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +43,11 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        larapattern()->allow('administrator.management.accounts.admin.create');
+
+        $data['roles'] = $this->roleRepository->getModel();
+
+        return view('admin.user-management.accounts.user.create', $data);
     }
 
     /**
@@ -39,9 +56,11 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminStoreRequest $request, ToastrFactory $flasher)
     {
-        //
+        larapattern()->allow('administrator.management.accounts.admin.create');
+
+        return $this->repository->createNewUser($request, $flasher);
     }
 
     /**
@@ -63,7 +82,13 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        larapattern()->allow('administrator.management.accounts.admin.update');
+
+        $data['user'] = $this->repository->findOrFailByUuid($id);
+        $data['roles'] = $this->roleRepository->getModel();
+        $data['role_selected'] = $data['user']->roles()->get();
+
+        return view('admin.user-management.accounts.user.edit', $data);
     }
 
     /**
@@ -73,9 +98,11 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminUpdateRequest $request, $id, ToastrFactory $flasher)
     {
-        //
+        larapattern()->allow('administrator.management.accounts.admin.update');
+
+        return $this->repository->updateUser($request, $id, $flasher);
     }
 
     /**
@@ -84,8 +111,10 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, ToastrFactory $flasher)
     {
-        //
+        larapattern()->allow('administrator.management.accounts.admin.destroy');
+
+        return $this->repository->deleteUser($id, $flasher);
     }
 }

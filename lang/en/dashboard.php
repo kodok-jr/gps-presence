@@ -26,7 +26,7 @@ return [
         'submenus' => [
             'name' => [
                 'user' => 'Admin',
-                'student' => 'Student',
+                'student' => 'Member',
                 'role-permissions' => 'Role & Permissions',
                 'profile' => 'Update Profile',
                 'reports' => [
@@ -44,24 +44,24 @@ return [
                'title' => [
                     'create' => [
                         'admin' => 'Create Admin',
-                        'student' => 'Create Student',
+                        'student' => 'Create Member',
                         'role' => 'Create Role',
                         'monitoring' => 'Create Presences Monitoring'
                     ],
                     'edit' => [
                         'admin' => 'Update Admin',
-                        'student' => 'Update Student',
+                        'student' => 'Update Member',
                         'role' => 'Update Role',
                         'approvals' => 'Approval Absences'
                     ],
                     'show' => [
                         'admin' => 'Detail Admin',
-                        'student' => 'Detail Student',
+                        'student' => 'Detail Member',
                         'role' => 'Detail Role'
                     ],
                     'delete' => [
                         'admin' => 'Delete Admin',
-                        'student' => 'Delete Student',
+                        'student' => 'Delete Member',
                         'role' => 'Delete Role'
                     ],
 
@@ -110,7 +110,7 @@ return [
     'content' => [
         'title' => [
             'user' => 'List of User',
-            'student' => 'List of Student',
+            'student' => 'List of Member',
             'role' => 'List of Role',
 
             'create' => [

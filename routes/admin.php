@@ -24,6 +24,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Administrator'], function () 
     Route::group(['middleware' => ['auth:admin']], function () {
 
         Route::resource('/', DashboardController::class)->only(['index']);
+        Route::resource('/profile', App\Http\Controllers\Administrator\ProfileController::class)->only(['index', 'update']);
+        Route::put('profile/avatar/{profile}', [App\Http\Controllers\Administrator\ProfileController::class, 'updateAvatar'])->name('profile.avatar.update');
 
         Route::group(['prefix' => 'management', 'as' => 'management.'], function () {
             Route::group(['prefix' => 'accounts', 'as' => 'accounts.'], function () {
