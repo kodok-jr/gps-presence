@@ -88,6 +88,11 @@ $(function () {
         allowClear: true
     });
 
+    $('.select2-position-id').select2({
+        placeholder: 'Select member...',
+        allowClear: true
+    });
+
     $('.custom-select2').select2({
         placeholder: 'Select options...',
         allowClear: true

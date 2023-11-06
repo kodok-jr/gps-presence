@@ -25,6 +25,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Third Party
 - [Avatar Laravolt](https://github.com/laravolt/avatar).
 - [PHPFlasher](https://php-flasher.io/installation/).
+- [mailtrap.io](https://mailtrap.io/inboxes/889537/messages).
 - [laravelCollective](https://laravelcollective.com/docs/6.x/html).
 - [SingleTable Inheritance](https://github.com/jonspalmer/single-table-inheritance).
 - [Proengsoft::JsValidation](https://github.com/proengsoft/laravel-jsvalidation).

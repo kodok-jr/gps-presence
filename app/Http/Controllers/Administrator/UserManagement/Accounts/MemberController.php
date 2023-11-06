@@ -4,11 +4,21 @@ namespace App\Http\Controllers\Administrator\UserManagement\Accounts;
 
 use App\DataTables\MemberDataTables;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Administrator\Usermanagement\Accounts\MemberStoreRequest;
+use App\Repositories\MemberRepository;
+use Flasher\Toastr\Prime\ToastrFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
 class MemberController extends Controller
 {
+    protected $repository;
+
+    public function __construct(MemberRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -33,7 +43,9 @@ class MemberController extends Controller
      */
     public function create()
     {
-        //
+        larapattern()->allow('administrator.management.accounts.student.create');
+
+        return view('admin.user-management.accounts.member.create');
     }
 
     /**
@@ -42,9 +54,11 @@ class MemberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MemberStoreRequest $request, ToastrFactory $flasher)
     {
-        //
+        larapattern()->allow('administrator.management.accounts.student.create');
+
+        return $this->repository->createNewMember($request, $flasher);
     }
 
     /**

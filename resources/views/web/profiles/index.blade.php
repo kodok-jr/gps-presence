@@ -54,25 +54,25 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-6">
-                            {!! Form::open(['url' => route('profiles.update', auth()->user()->uuid), 'method' => 'put', 'id' => 'updateProfileForm', 'autocomplete' => 'off']) !!}
+                            {!! Form::open(['url' => route('profiles.update', auth()->user()->uuid), 'method' => 'put', 'id' => 'updateProfileForm']) !!}
 
                                 <div class="input-group input-group-sm">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-address-card"></i></span>
                                     </div>
-                                    <input type="text" name="name" value="{{ old('name', auth()->user()->name) }}" class="form-control-sm form-control" id="name">
+                                    <input type="text" name="name" value="{{ old('name', auth()->user()->name) }}" class="form-control-sm form-control" id="name" autocomplete="off">
                                 </div>
                                 <div class="input-group input-group-sm mt-2">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="lnr-smartphone"></i></span>
                                     </div>
-                                    <input type="text" name="phone" value="{{ auth()->user()->phone }}" class="form-control-sm form-control" id="phone" placeholder="Ex: +62 821 1899 xxxx" autocomplete="off">
+                                    <input type="text" name="phone" value="{{ auth()->user()->phone }}" class="form-control-sm form-control" id="phone" placeholder="Ex: +62 821 1899 xxxx" autocomplete="false">
                                 </div>
                                 <div class="input-group input-group-sm mt-2">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="lnr-lock"></i></span>
                                     </div>
-                                    <input type="password" name="password" placeholder="**********" class="form-control-sm form-control" id="password" autocomplete="off">
+                                    <input type="password" name="password" placeholder="**********" class="form-control-sm form-control" id="password" autocomplete="new-password">
                                 </div>
                                 <div class="position-relative form-group input-group-sm mt-2">
                                     <label for="address" class="">Address</label>
